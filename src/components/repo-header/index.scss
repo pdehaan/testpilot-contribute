@@ -1,0 +1,44 @@
+.repo-header {
+  border-radius: 3px;
+  padding: 160px 20px 20px;
+  position: relative;
+  width: 300px;
+
+  &::after {
+    background: hsla(0, 0%, 100%, .05);
+    content: "";
+    height: 300px;
+    left: -150px;
+    position: absolute;
+    top: -150px;
+    transform: rotate(45deg);
+    width: 300px;
+    z-index: 2;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #0996f8;
+    }
+  }
+
+  h2,
+  p {
+    position: relative;
+    z-index: 3;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0;
+  }
+}

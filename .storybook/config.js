@@ -6,7 +6,8 @@ function loadStories() {
     'issue-list',
     'label',
     'label-list',
-    'repo'
+    'repo',
+    'repo-header'
   ].forEach(component => require(`../src/components/${component}/stories`));
 }
 

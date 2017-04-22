@@ -1,10 +1,14 @@
 .repo {
-  margin: 0 auto;
+  align-items: flex-start;
+  display: flex;
+  margin: 48px auto 0;
   max-width: 1000px;
 
-  h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .issue-list {
+    flex: 1;
   }
 }

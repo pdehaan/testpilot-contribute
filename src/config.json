@@ -3,42 +3,82 @@
     {
       "name": "Test Pilot",
       "repo": "mozilla/testpilot",
-      "description": "Test Pilot's own website and add-on."
+      "description": "Test Pilot's own website and add-on.",
+      "colors": [
+        "#1e4488",
+        "#0065b8"
+      ],
+      "thumbnail": "test-pilot.png"
     },
     {
       "name": "Snooze Tabs",
       "repo": "bwinton/SnoozeTabs",
-      "description": "Right website, wrong time? Snooze it until you need it. Snooze Tabs let you dismiss tabs now and set an alarm to open them later."
+      "description": "Right website, wrong time? Snooze it until you need it. Snooze Tabs let you dismiss tabs now and set an alarm to open them later.",
+      "colors": [
+        "#F89612",
+        "#B64F66"
+      ],
+      "thumbnail": "snooze-tabs.png"
     },
     {
       "name": "Containers",
       "repo": "mozilla/testpilot-containers",
-      "description": "Contain yourselves! Create different containers for each of your online lives - your work self, your social self, your personal self - to stay organized and maintain privacy."
+      "description": "Contain yourselves! Create different containers for each of your online lives - your work self, your social self, your personal self - to stay organized and maintain privacy.",
+      "colors": [
+        "#069CD6",
+        "#6C419F"
+      ],
+      "thumbnail": "containers.png"
     },
     {
       "name": "Pulse",
       "repo": "mozilla/pulse",
-      "description": "Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t."
+      "description": "Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t.",
+      "colors": [
+        "#58CA5B",
+        "#3EADB9"
+      ],
+      "thumbnail": "pulse.png"
     },
     {
       "name": "Page Shot",
       "repo": "mozilla-services/pageshot",
-      "description": "Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox."
-    },
-    {
-      "name": "Min Vid",
-      "repo": "meandavejustice/min-vid",
-      "description": "Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web."
+      "description": "Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox.",
+      "colors": [
+        "#02BDAD",
+        "#035295"
+      ],
+      "thumbnail": "page-shot.png"
     },
     {
       "name": "Activity Stream",
       "repo": "mozilla/activity-stream",
-      "description": "A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you're looking for in Firefox."
+      "description": "A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you're looking for in Firefox.",
+      "colors": [
+        "#0996F8",
+        "#0675D3"
+      ],
+      "thumbnail": "activity-stream.png"
+    },
+    {
+      "name": "Min Vid",
+      "repo": "meandavejustice/min-vid",
+      "description": "Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.",
+      "colors": [
+        "#FED66F",
+        "#FD667B"
+      ],
+      "thumbnail": "min-vid.png"
     },
     {
       "name": "Tab Center",
       "repo": "bwinton/TabCenter",
-      "description": "What would it be like to move tabs from the top of the browser to the side? We wanted to find out!"
+      "description": "What would it be like to move tabs from the top of the browser to the side? We wanted to find out!",
+      "colors": [
+        "#F25820",
+        "#D74012"
+      ],
+      "thumbnail": "tab-center.png"
     }
   ]
 }

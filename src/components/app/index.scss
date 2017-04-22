@@ -1,31 +1,13 @@
-@import '../../util';
+@import '../../util.scss';
 @import url('https://code.cdn.mozilla.net/fonts/fira.css');
 
-*,
-:after,
-:before {
-  box-sizing:inherit
-}
+@include global;
 
-body,
-html {
-  box-sizing:border-box;
-  min-height: 100vh;
-  min-width: 100vw;
-}
-
-body {
+.app {
   background: url('img/stars.png') no-repeat top,
               #1e4488 radial-gradient(ellipse 250% 100% at center 140%, #737ffd 0, #0065b8 50%, #1e4488 100%) no-repeat top;
   background-size: 1180px 346px, 100% 100%;
-  font: 16px/1.375 'Fira Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.app {
   margin: 0 auto;
-  max-width: 1000px;
 
   main {
     @include full-width;

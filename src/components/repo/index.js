@@ -3,6 +3,7 @@ import load from 'tectonic';
 
 import { IssueModel } from '../../models';
 import IssueList from '../issue-list';
+import RepoHeader from '../repo-header';
 
 import './index.css';
 
@@ -11,7 +12,9 @@ export class UnconnectedRepo extends Component {
     name: PropTypes.string.isRequired,
     repo: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    issues: PropTypes.arrayOf(PropTypes.object)
+    issues: PropTypes.arrayOf(PropTypes.object),
+    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    thumbnail: PropTypes.string.isRequired
   };
 
   static defaultProps = {
@@ -24,16 +27,13 @@ export class UnconnectedRepo extends Component {
   }
 
   render() {
-    const { description, issues, name, status: { issues: { status } } } = this.props;
+    const { issues, status: { issues: { status } } } = this.props;
     if (status !== 'SUCCESS' || !issues.length) {
       return null;
     }
     return (
       <section className="repo">
-        <header>
-          <h2><a href={this.getUrl()}>{name}</a></h2>
-          <p>{description}</p>
-        </header>
+        <RepoHeader url={this.getUrl()} {...this.props}/>
         <IssueList issues={issues} />
       </section>
     );
