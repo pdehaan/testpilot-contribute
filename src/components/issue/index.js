@@ -20,7 +20,8 @@ export default class Issue extends Component {
     const { html_url, labels, number, title } = this.props;
     return (
       <li className="issue">
-        <h2><a href={html_url}>{title} (#{number})</a></h2>
+        <span className="issue-number">#{number}</span>
+        <h3><a href={html_url}>{title}</a></h3>
         <LabelList labels={labels} />
       </li>
     );

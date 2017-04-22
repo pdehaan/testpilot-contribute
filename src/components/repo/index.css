@@ -1,9 +1,14 @@
 .repo {
   align-items: flex-start;
+  border-top: 1px solid #EFEFEF;
   display: flex;
-  margin: 48px auto 0;
+  margin: 0 auto;
+  padding: 48px 0;
   max-width: 1000px; }
-  .repo:first-child {
-    margin-top: 0; }
-  .repo .issue-list {
-    flex: 1; }
+
+.repo:first-child {
+  border-top: 0;
+  padding-top: 0; }
+
+.repo .issue-list {
+  flex: 1; }
