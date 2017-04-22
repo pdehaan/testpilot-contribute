@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Repo from './components/repo'
+import Repo from '../repo'
 
-import config from './config.json';
-import './App.css';
+import config from '../../config.json';
+import './index.scss';
 
 export default class App extends Component {
 
