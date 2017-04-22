@@ -1,6 +1,10 @@
 {
   "name": "good-first-bug",
   "version": "0.1.0",
+  "engines": {
+    "node": "7.8.x",
+    "npm": "4.2.x"
+  },
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
