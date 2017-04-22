@@ -1,7 +1,9 @@
 import { configure } from '@kadira/storybook';
 
 function loadStories() {
-  require('../src/stories');
+  [
+    'repo'
+  ].forEach(component => require(`../src/components/${component}/stories`));
 }
 
 configure(loadStories, module);
