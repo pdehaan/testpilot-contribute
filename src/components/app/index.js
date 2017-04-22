@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Repo from '../repo'
 
-import './index.scss';
+import './index.css';
 
 class App extends Component {
   static propTypes = {

@@ -39,8 +39,7 @@ class Repo extends Component {
     const { issues, status: { issues: { status } } } = this.props;
     if (status === 'PENDING') {
       return this.renderLoading();
-    }
-    if (!issues.length) {
+    } else if (!issues.length) {
       return this.renderNoIssues();
     }
     return (
@@ -52,7 +51,6 @@ class Repo extends Component {
 
   render() {
     const { description, name } = this.props;
-    console.log(status);
     return (
       <section className="repo">
         <header>
