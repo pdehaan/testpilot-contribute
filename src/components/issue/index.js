@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+import LabelList from '../label-list';
 import './index.css';
 
 export default class Issue extends Component {
@@ -15,25 +16,12 @@ export default class Issue extends Component {
     labels: []
   };
 
-  renderLabel(label) {
-    const { id, name } = label;
-    return <span key={id}>{name}</span>
-  }
-
-  renderLabels() {
-    const { labels } = this.props;
-    if (labels.length) {
-      return <p>{labels.map(label => this.renderLabel(label))}</p>
-    }
-    return null;
-  }
-
   render() {
-    const { number, title, html_url } = this.props;
+    const { html_url, labels, number, title } = this.props;
     return (
       <li className="issue">
         <h2><a href={html_url}>{title} (#{number})</a></h2>
-        {this.renderLabels()}
+        <LabelList labels={labels} />
       </li>
     );
   }
