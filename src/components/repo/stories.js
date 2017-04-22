@@ -5,7 +5,7 @@ import Repo from './index';
 
 const props = (overrides = {}) => Object.assign({}, {
   name: 'Test Pilot',
-  url: 'mozilla/testpilot',
+  repo: 'mozilla/testpilot',
   description: 'Test Pilot\'s own website and parent add-on.',
   issues: []
 }, overrides);

@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
-import styles from './index.css';
+import './index.css';
 
 export default class Repo extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
+    repo: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     issues: PropTypes.arrayOf(PropTypes.object)
   };
@@ -15,8 +15,8 @@ export default class Repo extends Component {
   };
 
   getUrl() {
-    const { url } = this.props;
-    return `https://github.com/${url}`;
+    const { repo } = this.props;
+    return `https://github.com/${repo}`;
   }
 
   renderNoIssues() {

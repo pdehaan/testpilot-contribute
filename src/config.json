@@ -1,0 +1,44 @@
+{
+  "repos": [
+    {
+      "name": "Test Pilot",
+      "repo": "mozilla/testpilot",
+      "description": "Test Pilot's own website and add-on."
+    },
+    {
+      "name": "Snooze Tabs",
+      "repo": "bwinton/SnoozeTabs",
+      "description": "Right website, wrong time? Snooze it until you need it. Snooze Tabs let you dismiss tabs now and set an alarm to open them later."
+    },
+    {
+      "name": "Containers",
+      "repo": "mozilla/testpilot-containers",
+      "description": "Contain yourselves! Create different containers for each of your online lives - your work self, your social self, your personal self - to stay organized and maintain privacy."
+    },
+    {
+      "name": "Pulse",
+      "repo": "mozilla/pulse",
+      "description": "Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t."
+    },
+    {
+      "name": "Page Shot",
+      "repo": "mozilla-services/pageshot",
+      "description": "Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox."
+    },
+    {
+      "name": "Min Vid",
+      "repo": "meandavejustice/min-vid",
+      "description": "Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web."
+    },
+    {
+      "name": "Activity Stream",
+      "repo": "mozilla/activity-stream",
+      "description": "A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you're looking for in Firefox."
+    },
+    {
+      "name": "Tab Center",
+      "repo": "bwinton/TabCenter",
+      "description": "What would it be like to move tabs from the top of the browser to the side? We wanted to find out!"
+    }
+  ]
+}
