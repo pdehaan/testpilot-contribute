@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     const { repos } = this.props;
     return (
-      <div>
+      <div className="app">
         <h1>Good First Bugs</h1>
         {repos.map(repo => <Repo key={repo.repo} {...repo}/>)}
       </div>

@@ -20,7 +20,11 @@ export default class LabelList extends Component {
   render() {
     const { labels } = this.props;
     if (labels.length) {
-      return <p>{labels.map(label => this.renderLabel(label))}</p>
+      return (
+        <p className="label-list">
+          {labels.map(label => this.renderLabel(label))}
+        </p>
+      );
     }
     return null;
   }

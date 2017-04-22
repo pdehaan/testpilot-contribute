@@ -20,7 +20,7 @@ export default class IssueList extends Component {
     const { issues } = this.props;
     if (issues.length) {
       return (
-        <ol>
+        <ol className="issue-list">
           {issues.map(issue => (this.renderIssue(issue)))}
         </ol>
       );

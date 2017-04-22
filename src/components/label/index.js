@@ -9,6 +9,6 @@ export default class Label extends Component {
 
   render() {
     const { name } = this.props;
-    return <span>{name}</span>
+    return <span className="label">{name}</span>
   }
 }
