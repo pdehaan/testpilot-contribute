@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import load from 'tectonic';
+
+import { IssueModel } from '../../models';
 
 import './index.css';
 
-export default class Repo extends Component {
+class Repo extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     repo: PropTypes.string.isRequired,
@@ -19,17 +22,24 @@ export default class Repo extends Component {
     return `https://github.com/${repo}`;
   }
 
+  renderLoading() {
+    return <p>Loading&hellip;</p>
+  }
+
   renderNoIssues() {
     return <p>No issues</p>;
   }
 
   renderIssue(issue) {
-    const { title } = issue;
-    return <li>{title}</li>
+    const { id, title } = issue;
+    return <li key={id}>{title}</li>
   }
 
   renderIssues() {
-    const { issues } = this.props;
+    const { issues, status: { issues: { status } } } = this.props;
+    if (status === 'PENDING') {
+      return this.renderLoading();
+    }
     if (!issues.length) {
       return this.renderNoIssues();
     }
@@ -42,6 +52,7 @@ export default class Repo extends Component {
 
   render() {
     const { description, name } = this.props;
+    console.log(status);
     return (
       <section className="repo">
         <header>
@@ -53,3 +64,7 @@ export default class Repo extends Component {
     );
   }
 }
+
+export default load(props => ({
+  issues: IssueModel.getList({ repo: props.repo }),
+}))(Repo);

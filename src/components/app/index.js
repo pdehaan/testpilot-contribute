@@ -19,13 +19,14 @@ class App extends Component {
     return (
       <div>
         <h1>Good First Bugs</h1>
-        {repos.map(repo => <Repo {...repo}/>)}
+        {repos.map(repo => <Repo key={repo.repo} {...repo}/>)}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
+  issues: state.issues,
   repos: state.repos
 });
 
