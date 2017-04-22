@@ -1,2 +1,8 @@
 .repo {
-  background: #EEE; }
+  margin: 0 auto;
+  max-width: 1000px; }
+
+.repo h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0; }

@@ -1,0 +1,10 @@
+// Allows a child of a fixed-width parent to be full width.
+@mixin full-width {
+  box-sizing: border-box;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}

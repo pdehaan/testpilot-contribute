@@ -1,0 +1,19 @@
+.header {
+  line-height: 0;
+
+  h1 {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  a {
+    background: url('./img/logo.png') no-repeat;
+    background-size: 296px 64px;
+    display: inline-block;
+    height: 64px;
+    margin: 15px 0 12px;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 296px;
+  }
+}

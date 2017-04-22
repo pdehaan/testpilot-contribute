@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import Header from '../header'
 import Repo from '../repo'
 
 import './index.css';
@@ -18,8 +19,10 @@ class App extends Component {
     const { repos } = this.props;
     return (
       <div className="app">
-        <h1>Good First Bugs</h1>
-        {repos.map(repo => <Repo key={repo.repo} {...repo}/>)}
+        <Header />
+        <main>
+          {repos.map(repo => <Repo key={repo.repo} {...repo}/>)}
+        </main>
       </div>
     );
   }
