@@ -1,20 +1,22 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import Repo from './index';
+import { UnconnectedRepo as Repo } from './index';
+import { issueFactory } from '../issue/stories';
 
 const props = (overrides = {}) => Object.assign({}, {
   name: 'Test Pilot',
   repo: 'mozilla/testpilot',
   description: 'Test Pilot\'s own website and parent add-on.',
-  issues: []
+  issues: [],
+  status: {
+    issues: {
+      status: 'SUCCESS'
+    }
+  }
 }, overrides);
-
-const issues = n => [...Array(n).keys()].map(key => ({
-  title: `This is the name of issue #${key + 1}`
-}));
 
 storiesOf('Repo', module)
   .add('no issues', () => <Repo {...props()} />)
-  .add('one issue', () => <Repo {...props({ issues: issues(1) })} />)
-  .add('five issues', () => <Repo {...props({ issues: issues(5) })} />);
+  .add('one issue', () => <Repo {...props({ issues: issueFactory(1) })} />)
+  .add('five issues', () => <Repo {...props({ issues: issueFactory(5) })} />);
