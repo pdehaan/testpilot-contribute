@@ -2,10 +2,8 @@ import React from 'react';
 import { addDecorator, storiesOf } from '@kadira/storybook';
 
 import { repos } from '../../config.json';
-import applyWrapper from '../wrapper/decorator';
+import wrapper from '../wrapper/decorator';
 import RepoHeader from './index';
-
-applyWrapper();
 
 const props = (overrides = {}) => Object.assign({}, {
   "name": "Min Vid",
@@ -18,7 +16,8 @@ const props = (overrides = {}) => Object.assign({}, {
   "thumbnail": "min-vid.png"
 }, overrides);
 
-const stories = storiesOf('RepoHeader', module);
+const stories = storiesOf('RepoHeader', module)
+  .addDecorator(wrapper());
 repos.forEach(repo => {
   stories.add(repo.name, () => <RepoHeader {...repo} />);
 });

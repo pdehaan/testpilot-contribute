@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { IssueModel } from '../../models';
 import IssueList from '../issue-list';
 import RepoHeader from '../repo-header';
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
+import wrapper from '../wrapper/decorator';
 import Label from './index';
 
 export const labelProps = (overrides = {}) => Object.assign({}, {
@@ -15,4 +16,5 @@ export const labelFactory = n => [...Array(n).keys()].map(key => labelProps({
 }));
 
 storiesOf('Label', module)
+  .addDecorator(wrapper())
   .add('default', () => <Label {...labelProps()} />);

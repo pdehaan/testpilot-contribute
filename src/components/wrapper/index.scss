@@ -4,8 +4,18 @@
 
 .wrapper {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   height: 100vh;
   justify-content: center;
+  padding: 30px;
   width: 100vw;
+
+  &.wrapper--blue {
+    background: #1e4488;
+  }
+
+  .wrapper--inner {
+    max-width: 1000px;
+  }
 }

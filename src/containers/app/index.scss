@@ -8,11 +8,11 @@
               #1e4488 radial-gradient(ellipse 250% 100% at center 140%, #737ffd 0, #0065b8 50%, #1e4488 100%) no-repeat top;
   background-size: 1180px 346px, 100% 100%;
   margin: 0 auto;
+  min-height: 100vh;
 
   main {
-    @include full-width;
-
-    background: #FFF;
-    padding: 24px 12px
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 12px
   }
 }

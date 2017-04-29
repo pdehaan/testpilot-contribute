@@ -3,12 +3,11 @@ import { addDecorator } from '@kadira/storybook';
 
 import Wrapper from './index';
 
-const WrapperDecorator = (story) => (
-  <Wrapper>
-    {story()}
-  </Wrapper>
-);
 
-export default () => {
-  addDecorator(WrapperDecorator);
+export default (extraClass = 'default') => {
+  return story => (
+    <Wrapper extraClass={extraClass}>
+      {story()}
+    </Wrapper>
+  );
 }

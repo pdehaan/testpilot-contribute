@@ -21,7 +21,8 @@
     "@kadira/storybook": "^2.21.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "storybook-router": "^0.1.2"
   },
   "scripts": {
     "start": "npm-run-all -p watch-css start-js",

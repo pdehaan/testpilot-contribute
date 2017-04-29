@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
 import wrapper from '../wrapper/decorator';
-import Header from './index';
+import Intro from './index';
 
-storiesOf('Header', module)
+storiesOf('Intro', module)
   .addDecorator(wrapper('blue'))
-  .add('default', () => <Header />);
+  .add('default', () => <Intro />);

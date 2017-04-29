@@ -1,0 +1,67 @@
+@keyframes slideUp {
+  0% {
+    transform: translateY(66%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.intro {
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+  padding: 24px 375px 24px 0;
+  position: relative;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+
+  &:after {
+    animation: 200ms ease-out 0s 1 slideUp;
+    background: url('./img/copter.png') no-repeat center;
+    background-size: auto 100%;
+    content: '';
+    display: block;
+    height: 265px;
+    position: absolute;
+    top: calc(50% - (265px / 2));
+    right: 0;
+    width: 328px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+
+  li,
+  p {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  ul {
+    margin: 16px 0 24px;
+    padding-left: 24px;
+  }
+
+  li {
+    font-size: 20px;
+    margin: 4px 0;
+
+    a {
+      border-bottom: 1px solid #94A6C6;
+      color: #FFF;
+      text-decoration: none;
+      transition: border 150ms ease-out;
+
+      &:hover {
+         border-bottom-color: #FFF;
+      }
+    }
+  }
+}
