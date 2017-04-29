@@ -1,6 +1,7 @@
 import { BaseResolver, Manager } from 'tectonic';
 import TectonicSuperagent from 'tectonic-superagent';
 
+import { tag } from './config.json';
 import { IssueModel } from './models';
 
 export default store => {
@@ -15,7 +16,7 @@ export default store => {
   manager.drivers.fromSuperagent([
     {
       meta: {
-        url: 'https://api.github.com/repos/:repo/issues?labels=good-first-bug',
+        url: `https://api.github.com/repos/:repo/issues?labels=${encodeURIComponent(tag)}`,
         method: 'GET'
       },
       returns: IssueModel.list()
