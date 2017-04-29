@@ -1,11 +1,11 @@
+import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux';
-import { reducer as tectonicReducer } from 'tectonic';
 
-import issueReducer from './issues';
-import repoReducer from './repo';
+import issues from './issues';
+import repos from './repo';
 
 export default combineReducers({
-  issues: issueReducer,
-  repos: repoReducer,
-  tectonic: tectonicReducer
+  issues,
+  repos,
+  routing
 });

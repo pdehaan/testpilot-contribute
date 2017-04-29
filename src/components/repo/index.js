@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import load from 'tectonic';
 
 import { IssueModel } from '../../models';
 import IssueList from '../issue-list';
@@ -7,7 +6,7 @@ import RepoHeader from '../repo-header';
 
 import './index.css';
 
-export class UnconnectedRepo extends Component {
+export default class Repo extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     repo: PropTypes.string.isRequired,
@@ -27,10 +26,6 @@ export class UnconnectedRepo extends Component {
   }
 
   render() {
-    const { issues, status: { issues: { status } } } = this.props;
-    if (status !== 'SUCCESS' || !issues.length) {
-      return null;
-    }
     return (
       <section className="repo">
         <RepoHeader url={this.getUrl()} {...this.props}/>
@@ -39,7 +34,3 @@ export class UnconnectedRepo extends Component {
     );
   }
 }
-
-export default load(props => ({
-  issues: IssueModel.getList({ repo: props.repo }),
-}))(UnconnectedRepo);

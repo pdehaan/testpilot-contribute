@@ -1,21 +1,17 @@
+import createHistory from 'history/createBrowserHistory'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Loader } from 'tectonic';
 
-import App from './components/app';
-
-import createManager from './manager';
+import App from './containers/app';
 import createStore from './store';
 
-const store = createStore();
-const manager = createManager(store);
+const history = createHistory();
+const store = createStore(history);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Loader manager={ manager }>
-      <App />
-    </Loader>
+    <App history={history} />
   </Provider>,
   document.getElementById('root')
 );

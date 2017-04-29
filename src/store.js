@@ -1,6 +1,15 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+
 import reducers from './reducers';
 
-export default initialState => {
-  return createStore(reducers, initialState);
+const enhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const middleware = routerMiddleware(history)
+
+export default (history, initialState = {}) => {
+  return createStore(
+    reducers,
+    initialState,
+    enhancers(applyMiddleware(...middleware))
+  );
 };
