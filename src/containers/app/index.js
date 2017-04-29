@@ -1,11 +1,10 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux';
 
 import Header from '../../components/header'
 import Home from '../home';
-
-console.log(Route);
 
 import './index.css';
 
