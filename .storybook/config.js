@@ -4,6 +4,8 @@ import StoryRouter from 'storybook-router';
 function loadStories() {
   [
     'button',
+    'docs-intro',
+    'docs-intro-link',
     'header',
     'intro',
     'issue',

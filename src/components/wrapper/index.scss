@@ -12,7 +12,9 @@
   width: 100vw;
 
   &.wrapper--blue {
-    background: #1e4488;
+    background: url('../../containers/app/img/stars.png') no-repeat top center,
+                #1e4488 radial-gradient(ellipse 250% 100% at center 140%, #737ffd 0, #0065b8 50%, #1e4488 100%) top;
+    background-size: 1180px 346px, 100% 100%;
   }
 
   .wrapper--inner {

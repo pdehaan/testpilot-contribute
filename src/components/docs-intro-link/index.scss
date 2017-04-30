@@ -1,0 +1,29 @@
+.docs-intro-link {
+  align-items: stretch;
+  border-left: 1px solid rgba(0, 0, 0, .1);
+  display: flex;
+  flex: 1;
+
+  &:nth-child(4n-3) {
+    border: 0;
+  }
+
+  a {
+    background: url('./img/testpilot.svg') no-repeat center 30px;
+    background-size: 96px;
+    color: #555;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 144px 18px 18px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 150ms ease-out;
+    width: 100%;
+
+    &:hover {
+      background-color: #FAFAFA;
+      color: #222;
+    }
+  }
+}

@@ -1,4 +1,26 @@
 {
+  "docs": [
+    {
+      "title": "What is open source?",
+      "slug": "what-is-open-source",
+      "file": "what-is-open-source.html"
+    },
+    {
+      "title": "Why would I contribute?",
+      "slug": "why-contribute",
+      "file": "why-contribute.html"
+    },
+    {
+      "title": "What do I need to know?",
+      "slug": "need-to-know",
+      "file": "need-to-know.html"
+    },
+    {
+      "title": "How do I get started?",
+      "slug": "get-started",
+      "file": "get-started.html"
+    }
+  ],
   "tag": "good first bug",
   "repos": [
     {

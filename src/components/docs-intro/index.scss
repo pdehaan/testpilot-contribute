@@ -1,0 +1,21 @@
+@import '../../util.scss';
+
+.docs-intro {
+  @include full-width;
+
+  background: #FFF;
+  padding: 36px 0;
+
+  h2 {
+    font-size: 40px;
+    font-style: italic;
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+}
