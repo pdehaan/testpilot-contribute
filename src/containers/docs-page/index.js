@@ -5,7 +5,7 @@ import DocsNavigation from '../../components/docs-navigation';
 
 import './index.css';
 
-class DocsPage extends Component {
+export default class DocsPage extends Component {
   static propTypes = {
     match: PropTypes.shape({
       path: PropTypes.string
@@ -56,29 +56,5 @@ class DocsPage extends Component {
         </div>
       </section>
     );
-  }
-}
-
-export class WhatIsOpenSource extends DocsPage {
-  renderTitle() {
-    return "What is open source?";
-  }
-}
-
-export class WhyContribute extends DocsPage {
-  renderTitle() {
-    return "Why would I contribute?";
-  }
-}
-
-export class NeedToKnow extends DocsPage {
-  renderTitle() {
-    return "What do I need to know?";
-  }
-}
-
-export class GetStarted extends DocsPage {
-  renderTitle() {
-    return "How do I get started?";
   }
 }

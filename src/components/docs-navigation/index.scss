@@ -1,5 +1,12 @@
 .docs-navigation {
   margin-right: 48px;
+  width: 240px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
   .button {
     margin-top: 16px;

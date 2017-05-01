@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import { storiesOf } from '@kadira/storybook';
 
+import { docs } from '../../config.json';
 import wrapper from '../../components/wrapper/decorator';
-import {
-  WhatIsOpenSource,
-  WhyContribute,
-  NeedToKnow,
-  GetStarted
-} from './index';
 
-storiesOf('DocsPage', module)
-  .addDecorator(wrapper('blue'))
-  .add('What is open source?', () => <WhatIsOpenSource />)
-  .add('Why would I contribute?', () => <WhyContribute />)
-  .add('What do I need to know?', () => <NeedToKnow />)
-  .add('How do I get started?', () => <GetStarted />);
+const stories = storiesOf('Documentation Pages', module)
+  .addDecorator(wrapper('blue'));
+docs.forEach(doc => {
+  const Component = require(`./content/${doc.slug}`).default;
+  stories.add(doc.title, () => createElement(Component, {
+    match: {
+      path: `/docs/${doc.slug}/`
+    }
+  }, null));
+});

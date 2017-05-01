@@ -14,7 +14,7 @@ export default class DocsIntroLink extends Component {
     const { slug, title } = this.props;
     return (
       <li className={`docs-intro-link docs-intro-link--${slug}`}>
-        <Link to={`/docs/${slug}`}>{title}</Link>
+        <Link to={`/docs/${slug}/`}>{title}</Link>
       </li>
     );
   }
