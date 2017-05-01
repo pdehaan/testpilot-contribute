@@ -31,14 +31,16 @@ export class ProjectIntroItem extends Component {
   render() {
     const { description, name, url } = this.props;
     return (
-      <Link className="project-intro--item" style={this.styles()} to="/">
-        <header>
-          <h3><a href={url}>{name}</a></h3>
-          <p>{description}</p>
-        </header>
-        <button>See Tasks</button>
-      </Link>
-    );
+      <li className="project-intro--item">
+        <Link style={this.styles()} to="/">
+          <header>
+            <h3>{name}</h3>
+            <p>{description}</p>
+          </header>
+          <button>See Tasks</button>
+        </Link>
+      </li>
+      );
   }
 }
 
@@ -60,9 +62,11 @@ export default class ProjectIntro extends Component {
     return (
       <section className="project-intro">
         <h2>Tasks by Project</h2>
-        {repos.map(repo => (
-          <ProjectIntroItem {...repo} />
-        ))}
+        <ul>
+          {repos.map(repo => (
+            <ProjectIntroItem {...repo} />
+          ))}
+        </ul>
       </section>
     );
   }

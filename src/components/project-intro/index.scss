@@ -1,9 +1,6 @@
 @import '../../util.scss';
 
 .project-intro {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   padding: 36px 0;
 
   h2 {
@@ -15,47 +12,60 @@
     text-shadow: 0 2px 0 rgba(0,0,0,.3);
     width: 100%;
   }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .project-intro--item {
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1),
-              0 1px 0 1px rgba(0, 0, 0, .1);
-  color: #000;
+  align-items: stretch;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   margin: 0 35px 35px 0;
-  overflow: hidden;
-  padding: 160px 20px 20px;
-  position: relative;
-  text-decoration: none;
-  transition: box-shadow 150ms ease-out;
   width: 300px;
 
-  &:nth-child(3n+1) {
-    margin-right: 0;
-  }
+  a {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1),
+                0 1px 0 1px rgba(0, 0, 0, .1);
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 160px 20px 20px;
+    position: relative;
+    text-decoration: none;
+    transition: box-shadow 150ms ease-out;
 
-  &::after {
-    background: rgba(255, 255, 255, .05);
-    content: "";
-    height: 300px;
-    left: -150px;
-    position: absolute;
-    top: -150px;
-    transform: rotate(45deg);
-    width: 300px;
-    z-index: 2;
-  }
-
-  &:hover {
-    box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .2),
-                0 0 0 5px hsla(0, 0%, 100%, .2);
-
-    h3 {
-      color: #0996f8;
+    &::after {
+      background: rgba(255, 255, 255, .05);
+      content: "";
+      height: 300px;
+      left: -150px;
+      position: absolute;
+      top: -150px;
+      transform: rotate(45deg);
+      width: 300px;
+      z-index: 2;
     }
+
+    &:hover {
+      box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .2),
+                  0 0 0 5px hsla(0, 0%, 100%, .2);
+      h3 {
+        color: #0996f8;
+      }
+    }
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
   }
 
   h3,
