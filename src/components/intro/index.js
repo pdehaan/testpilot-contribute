@@ -12,7 +12,7 @@ export default class Intro extends Component {
           <h2>Contribute to Test Pilot</h2>
         </header>
         <p>Just by using Test Pilot, you're helping steer the future of Firefox. Interested in further contributing? Everything we do is open-source, and we&apos;d love your help.</p>
-        <Button text="Find an Issue" to="/browse" />
+        <Button text="Find a Task" to="/browse" />
       </section>
     );
   }

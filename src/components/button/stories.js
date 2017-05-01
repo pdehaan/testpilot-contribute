@@ -6,4 +6,4 @@ import Button from './index';
 
 storiesOf('Button', module)
   .addDecorator(wrapper('blue'))
-  .add('default', () => <Button to="/foo" text="Find an Issue" />);
+  .add('default', () => <Button to="/foo" text="Find a Task" />);
