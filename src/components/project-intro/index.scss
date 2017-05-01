@@ -1,0 +1,96 @@
+@import '../../util.scss';
+
+.project-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 36px 0;
+
+  h2 {
+    color: #FFF;
+    font-size: 40px;
+    font-style: italic;
+    margin: 0 0 24px;
+    text-align: center;
+    text-shadow: 0 2px 0 rgba(0,0,0,.3);
+    width: 100%;
+  }
+}
+
+.project-intro--item {
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1),
+              0 1px 0 1px rgba(0, 0, 0, .1);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 35px 35px 0;
+  overflow: hidden;
+  padding: 160px 20px 20px;
+  position: relative;
+  text-decoration: none;
+  transition: box-shadow 150ms ease-out;
+  width: 300px;
+
+  &:nth-child(3n+1) {
+    margin-right: 0;
+  }
+
+  &::after {
+    background: rgba(255, 255, 255, .05);
+    content: "";
+    height: 300px;
+    left: -150px;
+    position: absolute;
+    top: -150px;
+    transform: rotate(45deg);
+    width: 300px;
+    z-index: 2;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .2),
+                0 0 0 5px hsla(0, 0%, 100%, .2);
+
+    h3 {
+      color: #0996f8;
+    }
+  }
+
+  h3,
+  p {
+    position: relative;
+    z-index: 3;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  button {
+    background-color: #0996f8;
+    border: 0;
+    border-radius: 3px;
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font: 16px/1 'Fira Sans', sans-serif;
+    height: 40px;
+    margin-top: 18px;
+    text-align: center;
+    transition: background-color 150ms ease-out;
+    width: 100%;
+
+    &:hover {
+      background-color: #078ae6;
+    }
+  }
+}
