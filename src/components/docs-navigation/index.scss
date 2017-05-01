@@ -1,0 +1,38 @@
+.docs-navigation {
+  margin-right: 48px;
+
+  .button {
+    margin-top: 16px;
+  }
+}
+
+.docs-navigation--item {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  a {
+    color: #444;
+    display: block;
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 12px 12px 10px;
+    text-decoration: none;
+    transition: all 150ms ease-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+      color: #000;
+    }
+  }
+
+  &.active {
+    a {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: #000;
+      cursor: default;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../util.scss';
+
+.docs-page {
+  @include full-width;
+
+  background: #FFF;
+  padding: 48px 0;
+
+  > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  article {
+    flex: 1;
+  }
+
+  nav {
+    width: 240px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .docs-page--header {
+    h2 {
+      font-size: 24px;
+      line-height: 1;
+      margin: 0 0 24px;
+    }
+  }
+
+  .docs-page--content {
+    padding: 0;
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.23;
+      margin: 24px 0 16px;
+    }
+
+    p {
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+
+    ul {
+      list-style: disc;
+      margin: 16px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+  }
+}

@@ -4,6 +4,13 @@ import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux';
 
 import Header from '../../components/header'
+
+import {
+  GetStarted,
+  NeedToKnow,
+  WhatIsOpenSource,
+  WhyContribute
+} from '../docs-page';
 import Home from '../home';
 
 import './index.css';
@@ -25,6 +32,10 @@ export default class App extends Component {
           <Header />
           <main>
             <Route exact path="/" component={Home} />
+            <Route path="/docs/what-is-open-source/" component={WhatIsOpenSource} />
+            <Route path="/docs/why-contribute/" component={WhyContribute} />
+            <Route path="/docs/need-to-know/" component={NeedToKnow} />
+            <Route path="/docs/get-started/" component={GetStarted} />
           </main>
         </div>
       </ConnectedRouter>

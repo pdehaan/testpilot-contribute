@@ -6,6 +6,7 @@ function loadStories() {
     'button',
     'docs-intro',
     'docs-intro-link',
+    'docs-navigation',
     'header',
     'intro',
     'issue',
@@ -16,6 +17,7 @@ function loadStories() {
     'repo-header'
   ].forEach(component => require(`../src/components/${component}/stories`));
   [
+    'docs-page',
     'home'
   ].forEach(container => require(`../src/containers/${container}/stories`));
 }

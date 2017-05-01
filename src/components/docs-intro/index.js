@@ -9,7 +9,7 @@ export default class DocsIntro extends Component {
   renderList() {
     return (
       <ul>
-        {docs.map(doc => <DocsIntroLink {...doc} />)}
+        {docs.map((doc, idx) => <DocsIntroLink key={idx} {...doc} />)}
       </ul>
     );
   }
