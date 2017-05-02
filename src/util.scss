@@ -14,6 +14,12 @@
   }
 }
 
+@mixin text-replacement {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -999em;
+}
+
 @mixin global {
   *,
   :after,

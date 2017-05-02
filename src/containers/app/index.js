@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 
+import Footer from '../../components/footer';
 import Header from '../../components/header';
 import { docs } from '../../config.json';
 import Home from '../home';
@@ -46,6 +47,7 @@ export default class App extends Component {
             <Route exact path="/" component={Home} />
             {this.renderDocsRoutes()}
           </main>
+          <Footer />
         </div>
       </ConnectedRouter>
     );
