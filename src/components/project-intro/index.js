@@ -29,7 +29,7 @@ export class ProjectIntroItem extends Component {
   }
 
   render() {
-    const { description, name, url } = this.props;
+    const { description, name } = this.props;
     return (
       <li className="project-intro--item">
         <Link style={this.styles()} to="/">

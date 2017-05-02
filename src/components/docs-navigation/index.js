@@ -29,7 +29,7 @@ export class DocsNavigationItem extends Component {
   }
 
   render() {
-    const { className, text, to } = this.props;
+    const { text, to } = this.props;
     return (
       <li className={this.className()}>
         <Link to={to}>{text}</Link>
@@ -50,7 +50,6 @@ export default class DocsNavigation extends Component {
   }
 
   render() {
-    const { currentPath } = this.props;
     return (
       <nav className="docs-navigation">
         <ul>
