@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
 import { skills } from '../../config.json';
 
 import './index.css';
@@ -13,14 +12,14 @@ export class SkillIntroItem extends Component {
     description: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired
-  }
+  };
 
   styles() {
     const { thumbnail } = this.props;
     return {
       background: `url('/skills/${thumbnail}') no-repeat center 24px`,
       backgroundSize: '64px 64px'
-    }
+    };
   }
 
   render() {
@@ -32,8 +31,8 @@ export class SkillIntroItem extends Component {
           <p>{description}</p>
         </Link>
       </li>
-  );
-}
+    );
+  }
 }
 
 export default class SkillIntro extends Component {
@@ -45,7 +44,7 @@ export default class SkillIntro extends Component {
     skills: []
   };
 
-  render () {
+  render() {
     const { skills } = this.props;
     if (!skills.length) {
       return null;
@@ -59,4 +58,4 @@ export default class SkillIntro extends Component {
       </section>
     );
   }
-};
+}

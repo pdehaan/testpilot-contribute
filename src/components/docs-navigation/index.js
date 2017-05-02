@@ -34,7 +34,7 @@ export class DocsNavigationItem extends Component {
       <li className={this.className()}>
         <Link to={to}>{text}</Link>
       </li>
-    )
+    );
   }
 }
 
@@ -44,7 +44,9 @@ export default class DocsNavigation extends Component {
     const { currentPath } = this.props;
     const to = `/docs/${slug}/`;
     const active = to === currentPath;
-    return <DocsNavigationItem key={idx} text={title} to={to} active={active} />;
+    return (
+      <DocsNavigationItem key={idx} text={title} to={to} active={active} />
+    );
   }
 
   render() {
@@ -57,6 +59,6 @@ export default class DocsNavigation extends Component {
         </ul>
         <Button to="/issues/" text="Find an Issue" />
       </nav>
-    )
+    );
   }
-};
+}

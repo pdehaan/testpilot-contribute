@@ -14,7 +14,7 @@ export default class IssueList extends Component {
   };
 
   renderIssue(issue) {
-    return <Issue key={issue.id} {...issue.values()} />
+    return <Issue key={issue.id} {...issue.values()} />;
   }
 
   render() {
@@ -22,7 +22,7 @@ export default class IssueList extends Component {
     if (issues.length) {
       return (
         <ol className="issue-list">
-          {issues.map(issue => (this.renderIssue(issue)))}
+          {issues.map(issue => this.renderIssue(issue))}
         </ol>
       );
     }

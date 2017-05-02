@@ -15,7 +15,7 @@ export default class LabelList extends Component {
 
   renderLabel(label) {
     const { id, name } = label;
-    return <Label key={id} name={name} />
+    return <Label key={id} name={name} />;
   }
 
   render() {

@@ -4,7 +4,7 @@ import { routerMiddleware } from 'react-router-redux';
 import reducers from './reducers';
 
 const enhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const middleware = routerMiddleware(history)
+const middleware = routerMiddleware(history);
 
 export default (history, initialState = {}) => {
   return createStore(

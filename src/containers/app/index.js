@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Route } from 'react-router'
+import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 
 import Header from '../../components/header';
@@ -20,15 +20,19 @@ export default class App extends Component {
 
   renderDocsRoutes() {
     return (
-      <Route path="/docs" render={() => (
-        <div>
-          {docs.map(doc => {
-            const Component = require(`../docs-page/content/${doc.slug}`).default;
-            const path = `/docs/${doc.slug}/`;
+      <Route
+        path="/docs"
+        render={() => (
+          <div>
+            {docs.map(doc => {
+              const Component = require(`../docs-page/content/${doc.slug}`)
+                .default;
+              const path = `/docs/${doc.slug}/`;
               return <Route exact path={path} component={Component} />;
-          })}
-        </div>
-      )} />
+            })}
+          </div>
+        )}
+      />
     );
   }
 

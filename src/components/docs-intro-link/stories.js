@@ -5,8 +5,7 @@ import { docs } from '../../config.json';
 import wrapper from '../wrapper/decorator';
 import DocsIntroLink from './index';
 
-const stories = storiesOf('DocsIntroLink', module)
-  .addDecorator(wrapper());
+const stories = storiesOf('DocsIntroLink', module).addDecorator(wrapper());
 
 docs.forEach(doc => {
   stories.add(doc.title, () => <DocsIntroLink {...doc} />);
