@@ -13,7 +13,8 @@ function loadStories() {
     'issue-list',
     'label',
     'label-list',
-    'project-intro'
+    'project-intro',
+    'skill-intro'
   ].forEach(component => require(`../src/components/${component}/stories`));
   [
     'docs-page',

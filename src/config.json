@@ -18,6 +18,44 @@
     }
   ],
   "tag": "good first bug",
+  "skills": [
+    {
+      "tag": "skill:html",
+      "name": "HTML",
+      "description": "Hypertext Markup Language, used to describe the content of webpages.",
+      "thumbnail": "html.png"
+    },
+    {
+      "tag": "skill:css",
+      "name": "CSS",
+      "description": "Cascading Style Sheets, used to style webpages.",
+      "thumbnail": "css.png"
+    },
+    {
+      "tag": "skill:js",
+      "name": "JavaScript",
+      "description": "JavaScript, a programming language used on webpages and in browsers.",
+      "thumbnail": "js.png"
+    },
+    {
+      "tag": "skill:documentation",
+      "name": "React",
+      "description": "A JavaScript view library open-sourced by Facebook.",
+      "thumbnail": "react.png"
+    },
+    {
+      "tag": "skill:documentation",
+      "name": "Documentation",
+      "description": "Writing documentation for developers and users.",
+      "thumbnail": "fpo.png"
+    },
+    {
+      "tag": "skill:webextensions",
+      "name": "WebExtensions",
+      "description": "A cross-browser system for developing browser add-ons.",
+      "thumbnail": "fpo.png"
+    }
+  ],
   "repos": [
     {
       "name": "Test Pilot",
