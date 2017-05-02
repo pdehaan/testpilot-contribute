@@ -6,7 +6,7 @@ import './index.css';
 export default class Wrapper extends Component {
   static propTypes = {
     extraClass: PropTypes.string.isRequired
-  }
+  };
 
   render() {
     const { children, extraClass } = this.props;
@@ -18,4 +18,4 @@ export default class Wrapper extends Component {
       </div>
     );
   }
-};
+}

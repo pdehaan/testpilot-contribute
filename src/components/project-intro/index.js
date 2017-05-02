@@ -40,10 +40,9 @@ export class ProjectIntroItem extends Component {
           <button>See Tasks</button>
         </Link>
       </li>
-      );
+    );
   }
 }
-
 
 export default class ProjectIntro extends Component {
   static propTypes = {
@@ -63,9 +62,7 @@ export default class ProjectIntro extends Component {
       <section className="project-intro">
         <h2>Tasks by Project</h2>
         <ul>
-          {repos.map(repo => (
-            <ProjectIntroItem {...repo} />
-          ))}
+          {repos.map(repo => <ProjectIntroItem {...repo} />)}
         </ul>
       </section>
     );

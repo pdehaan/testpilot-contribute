@@ -5,8 +5,9 @@ import { repos } from '../../config.json';
 import wrapper from '../wrapper/decorator';
 import ProjectIntro, { ProjectIntroItem } from './index';
 
-const itemStories = storiesOf('Project Intro Items', module)
-  .addDecorator(wrapper('blue'));
+const itemStories = storiesOf('Project Intro Items', module).addDecorator(
+  wrapper('blue')
+);
 repos.forEach(repo => {
   itemStories.add(repo.name, () => <ProjectIntroItem {...repo} />);
 });
