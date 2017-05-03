@@ -7,6 +7,7 @@ import Footer from '../../components/footer';
 import Header from '../../components/header';
 import { docs } from '../../config.json';
 import Home from '../home';
+import Tasks from '../tasks';
 
 import './index.css';
 
@@ -45,6 +46,7 @@ export default class App extends Component {
           <Header />
           <main>
             <Route exact path="/" component={Home} />
+            <Route exact path="/tasks/" component={Tasks} />
             {this.renderDocsRoutes()}
           </main>
           <Footer />

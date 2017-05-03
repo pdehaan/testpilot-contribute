@@ -8,6 +8,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "github-api": "^3.0.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "lint-staged": "^3.4.1",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.2.2",

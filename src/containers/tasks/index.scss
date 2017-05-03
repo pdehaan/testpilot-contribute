@@ -1,0 +1,7 @@
+@import '../../util.scss';
+
+.tasks {
+  @include full-width;
+
+  background: #FFF;
+}
