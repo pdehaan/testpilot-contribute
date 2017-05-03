@@ -53,7 +53,7 @@
       "tag": "skill:webextensions",
       "name": "WebExtensions",
       "description": "A cross-browser system for developing browser add-ons.",
-      "thumbnail": "fpo.png"
+      "thumbnail": "webextension.png"
     }
   ],
   "repos": [
