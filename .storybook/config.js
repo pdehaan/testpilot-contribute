@@ -2,6 +2,9 @@ import { addDecorator, configure } from '@kadira/storybook';
 import StoryRouter from 'storybook-router';
 
 function loadStories() {
+  ['home', 'docs-page', 'tasks'].forEach(container =>
+    require(`../src/containers/${container}/stories`)
+  );
   [
     'button',
     'docs-intro',
@@ -17,9 +20,6 @@ function loadStories() {
     'project-intro',
     'skill-intro'
   ].forEach(component => require(`../src/components/${component}/stories`));
-  ['docs-page', 'home'].forEach(container =>
-    require(`../src/containers/${container}/stories`)
-  );
 }
 addDecorator(StoryRouter());
 configure(loadStories, module);

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from './containers/app';
+import { taskActions } from './actions/tasks';
 import createStore from './store';
 
 const history = createHistory();
@@ -15,3 +16,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+store.dispatch(taskActions.fetchTasks());
