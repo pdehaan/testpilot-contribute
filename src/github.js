@@ -7,9 +7,24 @@ import {
 
 import { tag, repos } from './config';
 
+const repoMap = repos.reduce((accum, repo) => {
+  accum[repo.repo] = repo;
+  return accum;
+}, {});
+
+const getRepo = repoUrl => {
+  return repoMap[repoUrl.replace('https://api.github.com/repos/', '')];
+};
+
 export default class GitHub {
   static reduceIssue = issue => ({
-    title: issue.title
+    title: issue.title,
+    number: issue.number,
+    id: issue.id,
+    url: issue.html_url,
+    labels: issue.labels,
+    assignee: issue.assignee,
+    repo: getRepo(issue.repository_url)
   });
 
   static repoList = () => {
@@ -100,6 +115,7 @@ export default class GitHub {
             store.dispatch(actions.completeTasks(data));
           })
           .catch(err => {
+            console.log(err);
             store.dispatch(actions.errorTasks(err));
           });
         break;

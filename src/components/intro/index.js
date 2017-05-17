@@ -14,7 +14,7 @@ export default class Intro extends Component {
         <p>
           Just by using Test Pilot, you're helping steer the future of Firefox. Interested in further contributing? Everything we do is open-source, and we'd love your help.
         </p>
-        <Button text="Find a Task" to="/browse" />
+        <Button text="Find a Task" to="/tasks/" />
       </section>
     );
   }
