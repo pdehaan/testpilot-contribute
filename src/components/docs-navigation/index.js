@@ -56,7 +56,7 @@ export default class DocsNavigation extends Component {
           <DocsNavigationItem to="/" text="Back" />
           {docs.map((doc, idx) => this.renderNavItem(doc, idx))}
         </ul>
-        <Button to="/issues/" text="Find an Issue" />
+        <Button to="/tasks/" text="Find a Task" />
       </nav>
     );
   }

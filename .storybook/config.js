@@ -13,12 +13,12 @@ function loadStories() {
     'footer',
     'header',
     'intro',
-    'issue',
-    'issue-list',
     'label',
     'label-list',
     'project-intro',
-    'skill-intro'
+    'skill-intro',
+    'task',
+    'task-list'
   ].forEach(component => require(`../src/components/${component}/stories`));
 }
 addDecorator(StoryRouter());
