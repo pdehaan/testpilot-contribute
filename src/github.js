@@ -5,7 +5,7 @@ import {
   taskActionTypes as actionTypes
 } from './actions/tasks';
 
-import { tag, repos } from './config';
+import { skills, tag, repos } from './config';
 
 const repoMap = repos.reduce((accum, repo) => {
   accum[repo.repo] = repo;
@@ -16,15 +16,30 @@ const getRepo = repoUrl => {
   return repoMap[repoUrl.replace('https://api.github.com/repos/', '')];
 };
 
+const skillMap = skills.reduce((accum, skill) => {
+  accum[skill.tag] = skill;
+  return accum;
+}, {});
+
+const getSkill = label => skillMap[label.name];
+
+const getSkills = labels =>
+  labels.reduce((accum, label) => {
+    if (Object.keys(skillMap).includes(label.name)) {
+      accum.push(getSkill(label));
+    }
+    return accum;
+  }, []);
+
 export default class GitHub {
   static reduceIssue = issue => ({
     title: issue.title,
     number: issue.number,
     id: issue.id,
     url: issue.html_url,
-    labels: issue.labels,
     assignee: issue.assignee,
-    repo: getRepo(issue.repository_url)
+    repo: getRepo(issue.repository_url),
+    skills: getSkills(issue.labels)
   });
 
   static repoList = () => {
@@ -36,7 +51,7 @@ export default class GitHub {
   static createRequest = url => {
     if (url === null) {
       const query = encodeURIComponent(
-        `label:"${tag}" type:issue ${GitHub.repoList()}`
+        `label:"${tag}" state:open type:issue ${GitHub.repoList()}`
       );
       url = `https://api.github.com/search/issues?q=${query}&per_page=100`;
     }
@@ -94,7 +109,11 @@ export default class GitHub {
                 innerResolve();
               }
             } else {
-              outerResolve(items);
+              if (outerResolve !== null) {
+                outerResolve(items);
+              } else {
+                innerResolve(items);
+              }
             }
           })
           .catch(err => {

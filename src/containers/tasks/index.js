@@ -9,7 +9,7 @@ class Tasks extends Component {
     const { tasks } = this.props;
     return (
       <section className="tasks">
-        <p>Tasks</p>
+        <h2>Tasks</h2>
         <TaskList tasks={tasks} />
       </section>
     );

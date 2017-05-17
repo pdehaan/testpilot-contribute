@@ -18,7 +18,7 @@ export class ProjectIntroItem extends Component {
 
   gradientBg() {
     const { colors } = this.props;
-    return `#F2F2F2 linear-gradient(135deg, ${colors[0]}, ${colors[1]}) no-repeat`;
+    return `#F2F2F2 linear-gradient(135deg, rgb(${colors[0]}), rgb(${colors[1]})) no-repeat`;
   }
 
   styles() {
