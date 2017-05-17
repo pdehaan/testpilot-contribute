@@ -38,7 +38,7 @@
       "thumbnail": "js.png"
     },
     {
-      "tag": "skill:documentation",
+      "tag": "skill:react",
       "name": "React",
       "description": "A JavaScript view library open-sourced by Facebook.",
       "thumbnail": "react.png"
@@ -62,8 +62,8 @@
       "repo": "mozilla/testpilot",
       "description": "Test Pilot's own website and add-on.",
       "colors": [
-        "#1e4488",
-        "#0065b8"
+        "30, 68, 136",
+        "0, 107, 184"
       ],
       "thumbnail": "test-pilot.png"
     },
@@ -72,8 +72,8 @@
       "repo": "bwinton/SnoozeTabs",
       "description": "Right website, wrong time? Snooze it until you need it. Snooze Tabs let you dismiss tabs now and set an alarm to open them later.",
       "colors": [
-        "#F89612",
-        "#B64F66"
+        "248, 150, 18",
+        "182, 79, 102"
       ],
       "thumbnail": "snooze-tabs.png"
     },
@@ -82,8 +82,8 @@
       "repo": "mozilla/testpilot-containers",
       "description": "Contain yourselves! Create different containers for each of your online lives - your work self, your social self, your personal self - to stay organized and maintain privacy.",
       "colors": [
-        "#069CD6",
-        "#6C419F"
+        "6, 156, 214",
+        "108, 65, 159"
       ],
       "thumbnail": "containers.png"
     },
@@ -92,18 +92,18 @@
       "repo": "mozilla/pulse",
       "description": "Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t.",
       "colors": [
-        "#58CA5B",
-        "#3EADB9"
+        "88, 202, 91",
+        "62, 173, 185"
       ],
       "thumbnail": "pulse.png"
     },
     {
-      "name": "Page Shot",
-      "repo": "mozilla-services/pageshot",
+      "name": "Screenshots",
+      "repo": "mozilla-services/screenshots",
       "description": "Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox.",
       "colors": [
-        "#02BDAD",
-        "#035295"
+        "2, 189, 173",
+        "3, 82, 149"
       ],
       "thumbnail": "page-shot.png"
     },
@@ -112,8 +112,8 @@
       "repo": "mozilla/activity-stream",
       "description": "A rich visual history feed and a reimagined home page make it easier than ever to find exactly what you're looking for in Firefox.",
       "colors": [
-        "#0996F8",
-        "#0675D3"
+        "9, 150, 248",
+        "6, 117, 211"
       ],
       "thumbnail": "activity-stream.png"
     },
@@ -122,8 +122,8 @@
       "repo": "meandavejustice/min-vid",
       "description": "Keep videos front and center. Min Vid lets you display YouTube and Vimeo videos in a small frame that stays in the foreground as you browse the web.",
       "colors": [
-        "#FED66F",
-        "#FD667B"
+        "254, 214, 111",
+        "253, 102, 123"
       ],
       "thumbnail": "min-vid.png"
     },
@@ -132,8 +132,8 @@
       "repo": "bwinton/TabCenter",
       "description": "What would it be like to move tabs from the top of the browser to the side? We wanted to find out!",
       "colors": [
-        "#F25820",
-        "#D74012"
+        "242, 88, 32",
+        "215, 64, 18"
       ],
       "thumbnail": "tab-center.png"
     }

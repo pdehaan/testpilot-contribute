@@ -6,27 +6,32 @@ import './index.css';
 
 export default class LabelList extends Component {
   static propTypes = {
-    labels: PropTypes.arrayOf(PropTypes.object)
+    labels: PropTypes.arrayOf(PropTypes.object),
+    repo: PropTypes.object.isRequired
   };
 
   static defaultProps = {
-    labels: []
+    labels: [],
+    repo: {}
   };
 
-  renderLabel(label) {
+  renderSkill(label) {
     const { id, name } = label;
-    return <Label key={id} name={name} />;
+    return <Label key={id} prefix="Skill" name={name} />;
+  }
+
+  renderRepo() {
+    const { colors, name } = this.props.repo;
+    return <Label prefix="Project" name={name} color={colors[0]} />;
   }
 
   render() {
     const { labels } = this.props;
-    if (labels.length) {
-      return (
-        <p className="label-list">
-          {labels.map(label => this.renderLabel(label))}
-        </p>
-      );
-    }
-    return null;
+    return (
+      <div className="label-list">
+        {this.renderRepo()}
+        {labels.map(label => this.renderSkill(label))}
+      </div>
+    );
   }
 }

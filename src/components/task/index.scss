@@ -1,7 +1,11 @@
-.issue {
+.task {
   border-top: 1px solid #EFEFEF;
   margin: 0;
-  padding: 12px 0;
+  padding: 16px 0;
+
+  a {
+    text-decoration: none;
+  }
 
   &:first-child {
     border-top: none;
@@ -12,12 +16,38 @@
     padding-bottom: 0;
   }
 
-  h3 {
-    font-size: 16px;
-    margin: 0;
-  }
 
-  p{
+  h3 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
     margin: 0;
   }
+}
+
+
+.issue--location {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.issue--assignee {
+  color: rgba(0, 0, 0, 0.66);
+  font-size: 14px;
+  margin-top: 2px;
+
+  a {
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+  }
+}
+
+.issue--number {
+  color: rgba(0, 0, 0, 0.33);
+}
+
+.issue--repo {
+  color: rgba(0, 0, 0, 0.66);
 }

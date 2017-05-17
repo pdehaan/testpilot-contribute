@@ -4,4 +4,12 @@
   @include full-width;
 
   background: #FFF;
+  padding-top: 48px;
+  padding-bottom: 32px;
+
+  h2 {
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
 }

@@ -21,39 +21,27 @@ export default class Task extends Component {
     repo: null
   };
 
-  renderRepo() {
-    const { html_url, number, repo } = this.props;
-    if (repo) {
+  renderAssignee() {
+    const { assignee } = this.props;
+    if (assignee) {
       return (
-        <div className="issue--repo">
-          <a href={`https://github.com/${repo.repo}`}>{repo.name}</a>
-          <a href={html_url}>#{number}</a>
+        <div className="issue--assignee">
+          Assigned to <a href={assignee.html_url}>{assignee.login}</a>
         </div>
       );
     }
     return null;
   }
 
-  renderAssignee() {
-    const { assignee } = this.props;
-    if (assignee) {
-      return (
-        <p className="assignee">
-          Assigned to <a href={assignee.html_url}>{assignee.login}</a>
-        </p>
-      );
-    }
-    return null;
-  }
-
   render() {
-    const { url, labels, title } = this.props;
+    const { url, repo, skills, title } = this.props;
     return (
-      <li className="issue">
-        {this.renderRepo()}
-        <h3><a href={url}>{title}</a></h3>
-        <LabelList labels={labels} />
-        {this.renderAssignee()}
+      <li className="task">
+        <a href={url}>
+          <h3>{title}</h3>
+          {this.renderAssignee()}
+          <LabelList labels={skills} repo={repo} />
+        </a>
       </li>
     );
   }
