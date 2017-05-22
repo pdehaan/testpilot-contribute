@@ -7,15 +7,26 @@ import {
 
 import { skills, tag, repos } from './config';
 
-const repoMap = repos.reduce((accum, repo) => {
+// An object allowing lookups of repos by org/name slug.
+export const REPO_MAP = repos.reduce((accum, repo) => {
   accum[repo.repo] = repo;
   return accum;
 }, {});
 
+// An object allowing lookups of skills by tag name.
+export const SKILL_MAP = skills.reduce((accum, skill) => {
+  accum[skill.tag] = skill;
+  return accum;
+}, {});
+
+// Passed a string representing a repository's GitHub API URL, returns an object
+// representing it.
 const getRepo = repoUrl => {
-  return repoMap[repoUrl.replace('https://api.github.com/repos/', '')];
+  return REPO_MAP[repoUrl.replace('https://api.github.com/repos/', '')];
 };
 
+// Passed an array of issues, returns an object mapping slug to object for each
+// repo represented in those issues.
 const getActiveRepos = issues =>
   issues.reduce((accum, issue) => {
     const { repo } = issue.repo;
@@ -25,21 +36,21 @@ const getActiveRepos = issues =>
     return accum;
   }, {});
 
-const skillMap = skills.reduce((accum, skill) => {
-  accum[skill.tag] = skill;
-  return accum;
-}, {});
+// Passed a skill's name, returns an object representing it.
+const getSkill = labelName => SKILL_MAP[labelName];
 
-const getSkill = labelName => skillMap[labelName];
-
+// Passed an array of issues, returns an object mapping slugs to object for each
+// skill represented in those issues.
 const getSkills = labels =>
   labels.reduce((accum, label) => {
-    if (Object.keys(skillMap).includes(label.name)) {
+    if (Object.keys(SKILL_MAP).includes(label.name)) {
       accum.push(getSkill(label.name));
     }
     return accum;
   }, []);
 
+// Passed an array of issues, returns an object mapping slug to object for each
+// skill represented in those issues.
 const getActiveSkills = issues =>
   issues.reduce((accum, issue) => {
     if (issue.skills.length) {
