@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { taskStatus } from '../../actions/tasks';
+import Loading from '../../components/loading';
+
 import './index.css';
 
 export class ProjectIntroItem extends Component {
@@ -53,14 +56,30 @@ export default class ProjectIntro extends Component {
     repos: []
   };
 
+  renderHeader() {
+    return <h2>Tasks by Project</h2>;
+  }
+
+  renderLoading() {
+    return (
+      <section className="project-intro project-intro--loading">
+        {this.renderHeader()}
+        <Loading className="blue" />
+      </section>
+    );
+  }
+
   render() {
-    const { repos } = this.props;
-    if (!repos) {
+    const { repos, status } = this.props;
+    const { ERROR, INIT, PENDING } = taskStatus;
+    if ([INIT, PENDING].includes(status)) {
+      return this.renderLoading();
+    } else if (!repos.length || status === ERROR) {
       return null;
     }
     return (
       <section className="project-intro">
-        <h2>Tasks by Project</h2>
+        {this.renderHeader()}
         <ul>
           {repos.map(repo => <ProjectIntroItem {...repo} />)}
         </ul>

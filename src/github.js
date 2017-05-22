@@ -81,12 +81,13 @@ export default class GitHub {
     }, '');
   };
 
+  static query = encodeURIComponent(
+    `label:"${tag}" state:open type:issue ${GitHub.repoList()}`
+  );
+
   static createRequest = url => {
     if (url === null) {
-      const query = encodeURIComponent(
-        `label:"${tag}" state:open type:issue ${GitHub.repoList()}`
-      );
-      url = `https://api.github.com/search/issues?q=${query}&per_page=100`;
+      url = `https://api.github.com/search/issues?q=${GitHub.query}&per_page=100`;
     }
     const opts = {
       headers: new Headers({
