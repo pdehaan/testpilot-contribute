@@ -16,20 +16,42 @@ const getRepo = repoUrl => {
   return repoMap[repoUrl.replace('https://api.github.com/repos/', '')];
 };
 
+const getActiveRepos = issues =>
+  issues.reduce((accum, issue) => {
+    const { repo } = issue.repo;
+    if (!Object.keys(accum).includes(repo)) {
+      accum[repo] = getRepo(repo);
+    }
+    return accum;
+  }, {});
+
 const skillMap = skills.reduce((accum, skill) => {
   accum[skill.tag] = skill;
   return accum;
 }, {});
 
-const getSkill = label => skillMap[label.name];
+const getSkill = labelName => skillMap[labelName];
 
 const getSkills = labels =>
   labels.reduce((accum, label) => {
     if (Object.keys(skillMap).includes(label.name)) {
-      accum.push(getSkill(label));
+      accum.push(getSkill(label.name));
     }
     return accum;
   }, []);
+
+const getActiveSkills = issues =>
+  issues.reduce((accum, issue) => {
+    if (issue.skills.length) {
+      issue.skills.forEach(skill => {
+        const { tag } = skill;
+        if (!Object.keys(accum).includes(tag)) {
+          accum[tag] = getSkill(tag);
+        }
+      });
+    }
+    return accum;
+  }, {});
 
 export default class GitHub {
   static reduceIssue = issue => ({
@@ -130,8 +152,14 @@ export default class GitHub {
     switch (action.type) {
       case actionTypes.TASKS_FETCH:
         GitHub.makeRequest()
-          .then(data => {
-            store.dispatch(actions.completeTasks(data));
+          .then(issues => {
+            store.dispatch(
+              actions.completeTasks({
+                data: issues,
+                skills: getActiveSkills(issues),
+                repos: getActiveRepos(issues)
+              })
+            );
           })
           .catch(err => {
             console.log(err);
