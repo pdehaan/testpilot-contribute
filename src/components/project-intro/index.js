@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import URI from 'urijs';
 
 import { taskStatus } from '../../actions/tasks';
 import Loading from '../../components/loading';
@@ -24,23 +25,41 @@ export class ProjectIntroItem extends Component {
     return `#F2F2F2 linear-gradient(135deg, rgb(${colors[0]}), rgb(${colors[1]})) no-repeat`;
   }
 
-  styles() {
+  style() {
     return {
       background: `${this.thumbnailBg()}, ${this.gradientBg()}`,
       backgroundSize: '80px 80px, 300px 140px'
     };
   }
 
+  href() {
+    return new URI('/tasks/').query({ repo: this.props.repo }).toString();
+  }
+
+  handleClick(evt) {
+    const { repo, setFilters } = this.props;
+    setFilters({ repo });
+    evt.preventDefault();
+    evt.stopPropagation();
+  }
+
   render() {
     const { description, name } = this.props;
     return (
-      <li className="project-intro--item">
-        <Link style={this.styles()} to="/">
+      <li
+        className="project-intro--item"
+        onClick={evt => this.handleClick(evt)}
+      >
+        <Link
+          style={this.style()}
+          to={this.href()}
+          onClick={evt => this.handleClick(evt)}
+        >
           <header>
             <h3>{name}</h3>
             <p>{description}</p>
           </header>
-          <button>See Tasks</button>
+          <button onClick={evt => this.handleClick(evt)}>See Tasks</button>
         </Link>
       </li>
     );
@@ -70,7 +89,7 @@ export default class ProjectIntro extends Component {
   }
 
   render() {
-    const { repos, status } = this.props;
+    const { repos, setFilters, status } = this.props;
     const { ERROR, INIT, PENDING } = taskStatus;
     if ([INIT, PENDING].includes(status)) {
       return this.renderLoading();
@@ -81,7 +100,9 @@ export default class ProjectIntro extends Component {
       <section className="project-intro">
         {this.renderHeader()}
         <ul>
-          {repos.map(repo => <ProjectIntroItem {...repo} />)}
+          {repos.map(repo => (
+            <ProjectIntroItem setFilters={setFilters} {...repo} />
+          ))}
         </ul>
       </section>
     );

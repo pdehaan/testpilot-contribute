@@ -15,7 +15,14 @@ export class SkillIntroItem extends Component {
     thumbnail: PropTypes.string.isRequired
   };
 
-  styles() {
+  handleClick(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    const { setFilters, tag } = this.props;
+    setFilters({ skill: tag });
+  }
+
+  style() {
     const { thumbnail } = this.props;
     return {
       background: `url('/skills/${thumbnail}') no-repeat center 24px`,
@@ -23,11 +30,16 @@ export class SkillIntroItem extends Component {
     };
   }
 
+  href() {
+    const { tag } = this.props;
+    return `/tasks/?skill=${encodeURIComponent(tag)}`;
+  }
+
   render() {
     const { name, description } = this.props;
     return (
-      <li className="skill-intro--item" style={this.styles()}>
-        <Link to="/">
+      <li className="skill-intro--item" style={this.style()}>
+        <Link to={this.href()} onClick={evt => this.handleClick(evt)}>
           <h3>{name}</h3>
           <p>{description}</p>
         </Link>

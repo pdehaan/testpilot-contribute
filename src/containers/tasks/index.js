@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import GitHub from '../../github';
+import { filterActions } from '../../actions/filters';
 import { taskStatus } from '../../actions/tasks';
 import Loading from '../../components/loading';
 import TaskList from '../../components/task-list';
@@ -42,6 +43,9 @@ export class Tasks extends Component {
     return (
       <div className="tasks tasks--list">
         <h2>Tasks</h2>
+        <p>Repo: {this.props.filters.repo || 'none'}</p>
+        <p>Skill: {this.props.filters.skill || 'none'}</p>
+        <p />
         <TaskList tasks={tasks} />
       </div>
     );
@@ -60,8 +64,13 @@ export class Tasks extends Component {
 }
 
 const mapStateToProps = state => ({
+  filters: state.filters,
   status: state.tasks.status,
   tasks: state.tasks.data
 });
 
-export default connect(mapStateToProps)(Tasks);
+const mapDispatchToProps = dispatch => ({
+  setFilters: opts => dispatch(filterActions.filterSet(opts))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

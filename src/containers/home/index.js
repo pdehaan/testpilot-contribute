@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { filterActions } from '../../actions/filters';
+
 import DocsIntro from '../../components/docs-intro';
 import ProjectIntro from '../../components/project-intro';
 import SkillIntro from '../../components/skill-intro';
@@ -25,13 +27,21 @@ export class Home extends Component {
   }
 
   render() {
-    const { status, skills, repos } = this.props;
+    const { status, setFilters } = this.props;
     return (
       <section>
         <Intro />
         <DocsIntro />
-        <ProjectIntro repos={this.getRepos()} status={status} />
-        <SkillIntro skills={this.getSkills()} status={status} />
+        <ProjectIntro
+          repos={this.getRepos()}
+          status={status}
+          setFilters={setFilters}
+        />
+        <SkillIntro
+          skills={this.getSkills()}
+          status={status}
+          setFilters={setFilters}
+        />
       </section>
     );
   }
@@ -43,4 +53,8 @@ const mapStateToProps = state => ({
   repos: state.tasks.repos
 });
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => ({
+  setFilters: opts => dispatch(filterActions.filterSet(opts))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
