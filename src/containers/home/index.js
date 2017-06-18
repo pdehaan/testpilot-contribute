@@ -23,8 +23,8 @@ export class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  repos: state.filters.available.repo,
-  skills: state.filters.available.skill
+  repos: state.filters.available.repos,
+  skills: state.filters.available.skills
 });
 
 export default connect(mapStateToProps)(Home);

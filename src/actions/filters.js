@@ -14,7 +14,7 @@ const changeSkillFilter = slug => ({
 
 const setAvailableFilters = available => ({
   type: FILTERS_SET_AVAILABLE,
-  available
+  payload: available
 });
 
 export const filterActions = {

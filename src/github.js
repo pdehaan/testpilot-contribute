@@ -1,5 +1,6 @@
 /*global fetch, Headers, process, Request*/
 
+import { filterActions } from './actions/filters';
 import {
   taskActions as actions,
   taskActionTypes as actionTypes
@@ -30,6 +31,24 @@ const getSkills = labels =>
     }
     return accum;
   }, []);
+
+const getFilters = issues => {
+  const filters = {
+    repos: [],
+    skills: []
+  };
+  issues.forEach(issue => {
+    if (!filters.repos.includes(issue.repo)) {
+      filters.repos.push(issue.repo);
+    }
+    issue.skills.forEach(skill => {
+      if (!filters.skills.includes(skill)) {
+        filters.skills.push(skill);
+      }
+    });
+  });
+  return filters;
+};
 
 export default class GitHub {
   static reduceIssue = issue => ({
@@ -132,6 +151,7 @@ export default class GitHub {
         GitHub.makeRequest()
           .then(data => {
             store.dispatch(actions.completeTasks(data));
+            store.dispatch(filterActions.setAvailableFilters(getFilters(data)));
           })
           .catch(err => {
             console.log(err);

@@ -26,6 +26,12 @@ class Tasks extends Component {
 }
 
 const mapStateToProps = state => ({
+  filters: {
+    repo: state.filters.repo,
+    skills: state.filters.skill
+  },
+  repos: state.filters.available.repos,
+  skills: state.filters.available.skills,
   status: state.tasks.status,
   tasks: state.tasks.data
 });

@@ -5,8 +5,8 @@ import {
 
 const initialState = {
   available: {
-    repo: [],
-    skill: []
+    repos: [],
+    skills: []
   },
   repo: null,
   skill: null
@@ -21,6 +21,7 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { skill: action.payload });
 
     case actionTypes.FILTERS_SET_AVAILABLE:
+      console.log(action);
       const available = Object.assign(
         {},
         {
