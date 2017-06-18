@@ -1,0 +1,14 @@
+@import '../../util.scss';
+
+.task-filters {
+  @include full-width;
+
+  border-bottom: 1px solid #EEE;
+  display: flex;
+
+  h2 {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

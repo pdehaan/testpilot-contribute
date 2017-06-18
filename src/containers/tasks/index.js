@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { filterActions } from '../../actions/filters';
 import { taskStatus } from '../../actions/tasks';
 import Loading from '../../components/loading';
+
+import TaskFilters from '../../components/task-filters';
 import TaskList from '../../components/task-list';
 
 import filteredTasks from '../../selectors/filters';
@@ -14,9 +16,47 @@ class Tasks extends Component {
   renderWrapper(elem) {
     return (
       <section className="tasks">
-        <h2>Tasks</h2>
         {elem}
       </section>
+    );
+  }
+
+  renderFilters() {
+    const {
+      changeRepo,
+      changeSkill,
+      filters,
+      repos,
+      skills,
+      tasks
+    } = this.props;
+    return (
+      <TaskFilters
+        available={{ repos, skills }}
+        changeRepo={changeRepo}
+        changeSkill={changeSkill}
+        repo={filters.repo}
+        skill={filters.skill}
+      />
+    );
+  }
+
+  renderEmpty() {
+    return this.renderWrapper(
+      <div>
+        {this.renderFilters()}
+        <p>No tasks match the filters you've selected.</p>
+      </div>
+    );
+  }
+
+  renderTasks() {
+    const { tasks } = this.props;
+    return this.renderWrapper(
+      <div>
+        {this.renderFilters()}
+        <TaskList tasks={tasks} />
+      </div>
     );
   }
 
@@ -24,15 +64,17 @@ class Tasks extends Component {
     const { status, tasks } = this.props;
     if ([taskStatus.INIT, taskStatus.PENDING].includes(status)) {
       return this.renderWrapper(<Loading extraClass="loading--light" />);
+    } else if (tasks.length === 0) {
+      return this.renderEmpty();
     }
-    return this.renderWrapper(<TaskList tasks={tasks} />);
+    return this.renderTasks();
   }
 }
 
 const mapStateToProps = state => ({
   filters: {
     repo: state.filters.repo,
-    skills: state.filters.skill
+    skill: state.filters.skill
   },
   repos: state.filters.available.repos,
   skills: state.filters.available.skills,
