@@ -15,7 +15,9 @@ class TaskFilter extends Component {
 
   handleChange(evt) {
     const { target } = evt;
-    this.props.change(target.options[target.selectedIndex].getAttribute('value'));
+    this.props.change(
+      target.options[target.selectedIndex].getAttribute('value')
+    );
   }
 
   renderOption(value, title) {
@@ -28,12 +30,13 @@ class TaskFilter extends Component {
     return (
       <select onChange={evt => this.handleChange(evt)}>
         {this.renderOption(null, title)}
-        {available && available.map(item =>
-          this.renderOption(
-            this.props.getValue(item),
-            this.props.getTitle(item)
-          )
-        )}
+        {available &&
+          available.map(item =>
+            this.renderOption(
+              this.props.getValue(item),
+              this.props.getTitle(item)
+            )
+          )}
       </select>
     );
   }

@@ -74,7 +74,13 @@ export default class SkillIntro extends Component {
     }
     return this.renderWrapper(
       <ul>
-        {skills.map(skill => <SkillIntroItem changeSkill={changeSkill} history={history} {...skill} />)}
+        {skills.map(skill => (
+          <SkillIntroItem
+            changeSkill={changeSkill}
+            history={history}
+            {...skill}
+          />
+        ))}
       </ul>
     );
   }

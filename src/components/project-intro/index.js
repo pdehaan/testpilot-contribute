@@ -41,7 +41,11 @@ export class ProjectIntroItem extends Component {
   render() {
     const { description, name, repo } = this.props;
     return (
-        <li className="project-intro--item" style={this.styles()} onClick={() => this.handleclick()}>
+      <li
+        className="project-intro--item"
+        style={this.styles()}
+        onClick={() => this.handleclick()}
+      >
         <a href="/tasks" onClick={evt => this.handleClick(evt)}>
           <header>
             <h3>{name}</h3>
@@ -84,7 +88,13 @@ export default class ProjectIntro extends Component {
     }
     return this.renderWrapper(
       <ul>
-        {repos.map(repo => <ProjectIntroItem changeRepo={changeRepo} history={history} {...repo} />)}
+        {repos.map(repo => (
+          <ProjectIntroItem
+            changeRepo={changeRepo}
+            history={history}
+            {...repo}
+          />
+        ))}
       </ul>
     );
   }

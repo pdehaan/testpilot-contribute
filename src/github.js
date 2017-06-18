@@ -7,6 +7,7 @@ import {
 } from './actions/tasks';
 
 import { skills, tag, repos } from './config';
+import get from './xhr';
 
 const repoMap = repos.reduce((accum, repo) => {
   accum[repo.repo] = repo;
@@ -74,24 +75,18 @@ export default class GitHub {
       );
       url = `https://api.github.com/search/issues?q=${query}&per_page=100`;
     }
-    const opts = {
-      headers: new Headers({
-        Origin: 'https://testpilot.firefox.com',
-        'User-Agent': 'mozilla/testpilot'
-      }),
-      method: 'GET'
-    };
+    const headers = [];
     if (process.env.REACT_APP_GITHUB_TOKEN) {
-      opts.headers.append(
+      headers.append([
         'Authorization',
         `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-      );
+      ]);
     }
-    return new Request(url, opts);
+    return { url, headers };
   };
 
-  static getNextLink = response => {
-    const link = response.headers.get('Link');
+  static getNextLink = req => {
+    const link = req.getResponseHeader('Link');
     if (!link) {
       return false;
     }
@@ -110,38 +105,37 @@ export default class GitHub {
     next = null
   ) => {
     return new Promise((innerResolve, innerReject) => {
-      const request = GitHub.createRequest(next);
-      fetch(request).then(response => {
-        response
-          .json()
-          .then(data => {
-            const nextLink = GitHub.getNextLink(response);
-            const items = cumulative.concat(data.items.map(GitHub.reduceIssue));
-            if (nextLink) {
-              GitHub.makeRequest(
-                outerResolve || innerResolve,
-                outerReject || innerReject,
-                items,
-                nextLink
-              );
-              if (outerResolve !== null) {
-                innerResolve();
-              }
+      const { url, headers } = GitHub.createRequest(next);
+      get(url, headers)
+        .then(req => {
+          const data = JSON.parse(req.response);
+          console.log('xxx', req, data);
+          const nextLink = GitHub.getNextLink(req);
+          const items = cumulative.concat(data.items.map(GitHub.reduceIssue));
+          if (nextLink) {
+            GitHub.makeRequest(
+              outerResolve || innerResolve,
+              outerReject || innerReject,
+              items,
+              nextLink
+            );
+            if (outerResolve !== null) {
+              innerResolve();
+            }
+          } else {
+            if (outerResolve !== null) {
+              outerResolve(items);
             } else {
-              if (outerResolve !== null) {
-                outerResolve(items);
-              } else {
-                innerResolve(items);
-              }
+              innerResolve(items);
             }
-          })
-          .catch(err => {
-            innerReject(err);
-            if (outerReject !== null) {
-              outerReject(err);
-            }
-          });
-      });
+          }
+        })
+        .catch(err => {
+          innerReject(err);
+          if (outerReject !== null) {
+            outerReject(err);
+          }
+        });
     });
   };
 
