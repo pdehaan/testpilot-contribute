@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import URI from 'urijs';
 
 import { filterActions } from '../../actions/filters';
 import { taskStatus } from '../../actions/tasks';
