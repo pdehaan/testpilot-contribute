@@ -22,14 +22,22 @@ export class SkillIntroItem extends Component {
     };
   }
 
+  handleClick(evt) {
+    evt.preventDefault();
+    const { changeSkill, history, tag } = this.props;
+    changeSkill(tag);
+    history.push('/tasks');
+    window.scroll(0, 0);
+  }
+
   render() {
     const { name, description } = this.props;
     return (
       <li className="skill-intro--item" style={this.styles()}>
-        <Link to="/">
+        <a href="/tasks" onClick={evt => this.handleClick(evt)}>
           <h3>{name}</h3>
           <p>{description}</p>
-        </Link>
+        </a>
       </li>
     );
   }
@@ -37,6 +45,8 @@ export class SkillIntroItem extends Component {
 
 export default class SkillIntro extends Component {
   static propTypes = {
+    changeSkill: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
     skills: PropTypes.array
   };
 
@@ -58,13 +68,13 @@ export default class SkillIntro extends Component {
   }
 
   render() {
-    const { skills } = this.props;
+    const { changeSkill, history, skills } = this.props;
     if (!skills.length) {
       return this.renderLoading();
     }
     return this.renderWrapper(
       <ul>
-        {skills.map(skill => <SkillIntroItem {...skill} />)}
+        {skills.map(skill => <SkillIntroItem changeSkill={changeSkill} history={history} {...skill} />)}
       </ul>
     );
   }
