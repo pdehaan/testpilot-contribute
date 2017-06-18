@@ -37,7 +37,7 @@ export default class Task extends Component {
     const { url, repo, skills, title } = this.props;
     return (
       <li className="task">
-        <a href={url}>
+        <a href={url} target="_blank">
           <h3>{title}</h3>
           {this.renderAssignee()}
           <LabelList labels={skills} repo={repo} />

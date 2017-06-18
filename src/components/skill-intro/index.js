@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Loading from '../loading';
+
 import './index.css';
 
 export class SkillIntroItem extends Component {
@@ -20,14 +22,22 @@ export class SkillIntroItem extends Component {
     };
   }
 
+  handleClick(evt) {
+    evt.preventDefault();
+    const { changeSkill, history, tag } = this.props;
+    changeSkill(tag);
+    history.push('/tasks');
+    window.scroll(0, 0);
+  }
+
   render() {
     const { name, description } = this.props;
     return (
       <li className="skill-intro--item" style={this.styles()}>
-        <Link to="/">
+        <a href="/tasks" onClick={evt => this.handleClick(evt)}>
           <h3>{name}</h3>
           <p>{description}</p>
-        </Link>
+        </a>
       </li>
     );
   }
@@ -35,6 +45,8 @@ export class SkillIntroItem extends Component {
 
 export default class SkillIntro extends Component {
   static propTypes = {
+    changeSkill: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
     skills: PropTypes.array
   };
 
@@ -42,18 +54,28 @@ export default class SkillIntro extends Component {
     skills: []
   };
 
-  render() {
-    const { skills } = this.props;
-    if (!skills.length) {
-      return null;
-    }
+  renderWrapper(elem) {
     return (
       <section className="skill-intro">
         <h2>Tasks by Skill</h2>
-        <ul>
-          {skills.map(skill => <SkillIntroItem {...skill} />)}
-        </ul>
+        {elem}
       </section>
+    );
+  }
+
+  renderLoading() {
+    return this.renderWrapper(<Loading />);
+  }
+
+  render() {
+    const { changeSkill, history, skills } = this.props;
+    if (!skills.length) {
+      return this.renderLoading();
+    }
+    return this.renderWrapper(
+      <ul>
+        {skills.map(skill => <SkillIntroItem changeSkill={changeSkill} history={history} {...skill} />)}
+      </ul>
     );
   }
 }

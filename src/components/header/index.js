@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -7,7 +8,7 @@ export default class Header extends Component {
     return (
       <header className="header">
         <h1>
-          <a href="https://testpilot.firefox.com/">Firefox Test Pilot</a>
+          <Link to="/">Firefox Test Pilot</Link>
         </h1>
       </header>
     );
