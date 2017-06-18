@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Loading from '../loading';
+
 import './index.css';
 
 export class SkillIntroItem extends Component {
@@ -42,18 +44,28 @@ export default class SkillIntro extends Component {
     skills: []
   };
 
-  render() {
-    const { skills } = this.props;
-    if (!skills.length) {
-      return null;
-    }
+  renderWrapper(elem) {
     return (
       <section className="skill-intro">
         <h2>Tasks by Skill</h2>
-        <ul>
-          {skills.map(skill => <SkillIntroItem {...skill} />)}
-        </ul>
+        {elem}
       </section>
+    );
+  }
+
+  renderLoading() {
+    return this.renderWrapper(<Loading />);
+  }
+
+  render() {
+    const { skills } = this.props;
+    if (!skills.length) {
+      return this.renderLoading();
+    }
+    return this.renderWrapper(
+      <ul>
+        {skills.map(skill => <SkillIntroItem {...skill} />)}
+      </ul>
     );
   }
 }
