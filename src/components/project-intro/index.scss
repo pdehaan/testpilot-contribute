@@ -1,16 +1,8 @@
 @import '../../util.scss';
 
 .project-intro {
-  padding: 36px 0;
-
   h2 {
-    color: #FFF;
-    font-size: 40px;
-    font-style: italic;
-    margin: 0 0 24px;
-    text-align: center;
-    text-shadow: 0 2px 0 rgba(0,0,0,.3);
-    width: 100%;
+    @include intro-header;
   }
 
   ul {

@@ -14,6 +14,30 @@
   }
 }
 
+@mixin intro-header {
+  align-items: center;
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 48px;
+  padding: 64px 0 24px;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+
+  &:after {
+    background: #FFF;
+    border-radius: 2px;
+    content: '';
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+  }
+}
+
 @mixin text-replacement {
   display: inline-block;
   overflow: hidden;

@@ -17,8 +17,8 @@ export class SkillIntroItem extends Component {
   styles() {
     const { thumbnail } = this.props;
     return {
-      background: `url('/skills/${thumbnail}') no-repeat center 24px`,
-      backgroundSize: '64px 64px'
+      background: `url('/skills/${thumbnail}') no-repeat center 64px`,
+      backgroundSize: '112px 112px'
     };
   }
 
