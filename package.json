@@ -1,6 +1,18 @@
 {
-  "name": "good-first-bug",
-  "version": "0.1.0",
+  "name": "testpilot-contribute",
+  "description": "A minisite aggregating open bugs suitable for first-time contributors across Test Pilot's various projects and repositories.",
+  "version": "0.9.0",
+  "author": "Mozilla (https://mozilla.org/)",
+  "homepage": "https://testpilot-contribute.herokuapp.com",
+  "license": "MPL-2.0",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuckharmston/testpilot-contribute.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chuckharmston/testpilot-contribute/issues"
+  },
   "engines": {
     "node": "7.8.x",
     "npm": "4.2.x"
