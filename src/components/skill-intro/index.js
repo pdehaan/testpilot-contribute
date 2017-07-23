@@ -8,8 +8,10 @@ import './index.css';
 
 export class SkillIntroItem extends Component {
   static propTypes = {
-    name: PropTypes.string.isRequired,
+    changeSkill: PropTypes.func.isRequired,
+    changeRepo: PropTypes.func.isRequired,
     description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired
   };
@@ -24,8 +26,9 @@ export class SkillIntroItem extends Component {
 
   handleClick(evt) {
     evt.preventDefault();
-    const { changeSkill, history, tag } = this.props;
+    const { changeSkill, changeRepo, history, tag } = this.props;
     changeSkill(tag);
+    changeRepo(null);
     history.push('/tasks');
     window.scroll(0, 0);
   }
@@ -46,6 +49,7 @@ export class SkillIntroItem extends Component {
 export default class SkillIntro extends Component {
   static propTypes = {
     changeSkill: PropTypes.func.isRequired,
+    changeRepo: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
     skills: PropTypes.array
   };
@@ -68,7 +72,7 @@ export default class SkillIntro extends Component {
   }
 
   render() {
-    const { changeSkill, history, skills } = this.props;
+    const { changeRepo, changeSkill, history, skills } = this.props;
     if (!skills.length) {
       return this.renderLoading();
     }
@@ -77,6 +81,7 @@ export default class SkillIntro extends Component {
         {skills.map(skill => (
           <SkillIntroItem
             changeSkill={changeSkill}
+            changeRepo={changeRepo}
             history={history}
             {...skill}
           />

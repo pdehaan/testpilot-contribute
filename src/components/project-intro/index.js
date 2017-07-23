@@ -8,8 +8,10 @@ import './index.css';
 
 export class ProjectIntroItem extends Component {
   static propTypes = {
-    name: PropTypes.string.isRequired,
+    changeRepo: PropTypes.func.isRequired,
+    changeSkill: PropTypes.func.isRequired,
     description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
   };
 
@@ -32,8 +34,9 @@ export class ProjectIntroItem extends Component {
 
   handleClick(evt) {
     evt.preventDefault();
-    const { changeRepo, history, repo } = this.props;
+    const { changeRepo, changeSkill, history, repo } = this.props;
     changeRepo(repo);
+    changeSkill(null);
     history.push('/tasks');
     window.scroll(0, 0);
   }
@@ -61,6 +64,7 @@ export class ProjectIntroItem extends Component {
 export default class ProjectIntro extends Component {
   static propTypes = {
     changeRepo: PropTypes.func.isRequired,
+    changeSkill: PropTypes.func.isRequired,
     repos: PropTypes.array
   };
 
@@ -82,7 +86,7 @@ export default class ProjectIntro extends Component {
   }
 
   render() {
-    const { changeRepo, history, repos } = this.props;
+    const { changeRepo, changeSkill, history, repos } = this.props;
     if (!repos.length) {
       return this.renderLoading();
     }
@@ -91,6 +95,7 @@ export default class ProjectIntro extends Component {
         {repos.map(repo => (
           <ProjectIntroItem
             changeRepo={changeRepo}
+            changeSkill={changeSkill}
             history={history}
             {...repo}
           />

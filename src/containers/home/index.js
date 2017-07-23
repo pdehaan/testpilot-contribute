@@ -22,8 +22,9 @@ export class Home extends Component {
         <main>
           <Intro />
           <DocsIntro />
-          <ProjectIntro changeRepo={changeRepo} history={history} repos={repos} />
+          <ProjectIntro changeRepo={changeRepo} changeSkill={changeSkill} history={history} repos={repos} />
           <SkillIntro
+            changeRepo={changeRepo}
             changeSkill={changeSkill}
             history={history}
             skills={skills}
