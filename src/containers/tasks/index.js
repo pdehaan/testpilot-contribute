@@ -44,11 +44,18 @@ class Tasks extends Component {
     );
   }
 
+  resetFilters(evt) {
+    evt.preventDefault();
+    const { changeRepo, changeSkill } = this.props;
+    changeRepo(null);
+    changeSkill(null);
+  }
+
   renderEmpty() {
     return this.renderWrapper(
-      <div>
+      <div className="tasks--view">
         {this.renderFilters()}
-        <p>No tasks match the filters you have selected.</p>
+        <p className="tasks--empty">No tasks match the filters you have selected. <a href="" onClick={evt => this.resetFilters(evt)}>Reset them?</a></p>
       </div>
     );
   }

@@ -17,12 +17,12 @@ export default class LabelList extends Component {
 
   renderSkill(label) {
     const { id, name } = label;
-    return <Label key={id} prefix="Skill" name={name} />;
+    return <Label key={id} className="skill" name={name} />;
   }
 
   renderRepo() {
-    const { colors, name } = this.props.repo;
-    return <Label prefix="Project" name={name} color={colors[0]} />;
+    const { colors, name, repo } = this.props.repo;
+    return <Label key={repo} className="project" name={name} />;
   }
 
   render() {

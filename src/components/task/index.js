@@ -30,7 +30,9 @@ export default class Task extends Component {
         </div>
       );
     }
-    return null;
+    return (
+      <div className="issue--assignee">Assigned to <strong>nobody</strong></div>
+    );
   }
 
   render() {
@@ -38,9 +40,9 @@ export default class Task extends Component {
     return (
       <li className="task">
         <a href={url} target="_blank">
+          <LabelList labels={skills} repo={repo} />
           <h3>{title}</h3>
           {this.renderAssignee()}
-          <LabelList labels={skills} repo={repo} />
         </a>
       </li>
     );

@@ -1,9 +1,21 @@
 @import '../../util.scss';
 
-.tasks {
-}
-
 .tasks--view {
+  align-items: flex-start;
   display: flex;
   padding-top: 64px;
+}
+
+.tasks--empty {
+  background: #FFF;
+  border-radius: 3px;
+  flex: 1;
+  margin: 0;
+  padding: 32px;
+  text-align: center;
+
+  a {
+    color: #0996F8;
+    text-decoration: none;
+  }
 }

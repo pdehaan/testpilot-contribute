@@ -5,40 +5,14 @@ import './index.css';
 
 export default class Label extends Component {
   static propTypes = {
-    color: PropTypes.string,
-    name: PropTypes.string,
-    prefix: PropTypes.string
+    className: PropTypes.string.isRequired,
+    name: PropTypes.string
   };
 
-  renderPrefix() {
-    const { prefix } = this.props;
-    if (prefix) {
-      return (
-        <span className="label--prefix">
-          {prefix}
-        </span>
-      );
-    }
-    return null;
-  }
-
-  getStyle() {
-    const { color } = this.props;
-    if (!color) {
-      return {};
-    }
-    return {
-      backgroundColor: `rgb(${color})`
-    };
-  }
-
   render() {
-    const { name } = this.props;
+    const { className, name } = this.props;
     return (
-      <span className="label" style={this.getStyle()}>
-        {this.renderPrefix()}
-        <span className="label--name">{name}</span>
-      </span>
+      <span className={`label label--${className}`}>{name}</span>
     );
   }
 }
