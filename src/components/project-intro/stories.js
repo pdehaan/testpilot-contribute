@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
 import { repos } from '../../config.json';
-import wrapper from '../wrapper/decorator';
+import { wrapper } from '../wrapper/decorator';
+
 import ProjectIntro, { ProjectIntroItem } from './index';
 
 const itemStories = storiesOf('Project Intro Items', module).addDecorator(

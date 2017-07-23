@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import { filterActions } from '../../actions/filters';
 import { taskStatus } from '../../actions/tasks';
+import Header from '../../components/header';
 import Loading from '../../components/loading';
-
 import TaskFilters from '../../components/task-filters';
 import TaskList from '../../components/task-list';
 
@@ -15,9 +15,12 @@ import './index.css';
 class Tasks extends Component {
   renderWrapper(elem) {
     return (
-      <section className="tasks">
-        {elem}
-      </section>
+      <div>
+        <Header />
+        <div className="tasks">
+          {elem}
+        </div>
+      </div>
     );
   }
 
@@ -45,7 +48,7 @@ class Tasks extends Component {
     return this.renderWrapper(
       <div>
         {this.renderFilters()}
-        <p>No tasks match the filters you've selected.</p>
+        <p>No tasks match the filters you have selected.</p>
       </div>
     );
   }

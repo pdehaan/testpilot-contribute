@@ -56,7 +56,7 @@ export default class SkillIntro extends Component {
 
   renderWrapper(elem) {
     return (
-      <section className="skill-intro">
+      <section id="skill-intro" className="skill-intro">
         <h2>Tasks by Skill</h2>
         {elem}
       </section>

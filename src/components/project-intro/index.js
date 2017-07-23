@@ -70,7 +70,7 @@ export default class ProjectIntro extends Component {
 
   renderWrapper(elem) {
     return (
-      <section className="project-intro">
+      <section id="project-intro" className="project-intro">
         <h2>Tasks by Project</h2>
         {elem}
       </section>

@@ -16,7 +16,7 @@ export default class DocsIntro extends Component {
 
   render() {
     return (
-      <section className="docs-intro">
+      <section id="docs-intro" className="docs-intro">
         <header>
           <h2>Getting Started</h2>
         </header>

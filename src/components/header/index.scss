@@ -1,4 +1,7 @@
 .header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   line-height: 0;
   margin: 0 auto;
   padding: 0 12px;
@@ -7,16 +10,43 @@
 
   h1 {
     margin: 0;
+
+    a {
+      background: url('./img/logo.png') no-repeat;
+      background-size: 296px 64px;
+      display: inline-block;
+      height: 64px;
+      margin: 15px 0 12px;
+      overflow: hidden;
+      text-indent: -999em;
+      width: 296px;
+    }
   }
 
-  a {
-    background: url('./img/logo.png') no-repeat;
-    background-size: 296px 64px;
-    display: inline-block;
-    height: 64px;
-    margin: 15px 0 12px;
-    overflow: hidden;
-    text-indent: -999em;
-    width: 296px;
+  ul {
+    display: flex;
+    font-weight: 500;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+
+    a {
+      color: #A3B3D0;
+      text-decoration: none;
+      transition: color 150ms ease-out;
+
+      &:hover {
+        color: #FFF;
+      }
+    }
+  }
+
+  li {
+    margin-right: 50px;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }

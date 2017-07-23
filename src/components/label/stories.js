@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 
-import wrapper from '../wrapper/decorator';
+import { wrapper } from '../wrapper/decorator';
+
 import Label from './index';
 
 export const labelProps = (overrides = {}) =>
