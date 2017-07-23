@@ -11,8 +11,6 @@ export default class Label extends Component {
 
   render() {
     const { className, name } = this.props;
-    return (
-      <span className={`label label--${className}`}>{name}</span>
-    );
+    return <span className={`label label--${className}`}>{name}</span>;
   }
 }

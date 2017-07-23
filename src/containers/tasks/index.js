@@ -55,7 +55,11 @@ class Tasks extends Component {
     return this.renderWrapper(
       <div className="tasks--view">
         {this.renderFilters()}
-        <p className="tasks--empty">No tasks match the filters you have selected. <a href="" onClick={evt => this.resetFilters(evt)}>Reset them?</a></p>
+        <p className="tasks--empty">
+          No tasks match the filters you have selected.
+          {' '}
+          <a href="" onClick={evt => this.resetFilters(evt)}>Reset them?</a>
+        </p>
       </div>
     );
   }

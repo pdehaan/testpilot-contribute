@@ -37,7 +37,9 @@ class TaskFilter extends Component {
           data-value={value}
           onClick={evt => this.handleClick(evt)}
           style={this.renderOptionStyle(thumbnail)}
-        >{title}</a>
+        >
+          {title}
+        </a>
       </li>
     );
   }
@@ -87,8 +89,13 @@ export default class TaskFilters extends Component {
 
   renderResetButton() {
     return (
-      <button className="task-filters--reset" onClick={evt => this.handleReset(evt)}>All Tasks</button>
-    )
+      <button
+        className="task-filters--reset"
+        onClick={evt => this.handleReset(evt)}
+      >
+        All Tasks
+      </button>
+    );
   }
 
   render() {

@@ -19,7 +19,7 @@ export class NavItem extends Component {
     scrollTo(`#${fragment}`);
   }
 
-  render () {
+  render() {
     const { target, text } = this.props;
     return (
       <li>

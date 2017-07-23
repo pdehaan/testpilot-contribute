@@ -39,7 +39,7 @@ export default class App extends Component {
   }
 
   getNav(pathname) {
-    console.log('Getting nav for', pathname)
+    console.log('Getting nav for', pathname);
     const navMap = {
       '/': HomeNav
     };
