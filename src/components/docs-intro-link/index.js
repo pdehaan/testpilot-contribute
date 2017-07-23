@@ -7,14 +7,18 @@ import './index.css';
 export default class DocsIntroLink extends Component {
   static propTypes = {
     slug: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   };
 
   render() {
-    const { slug, title } = this.props;
+    const { slug, subtitle, title } = this.props;
     return (
       <li className={`docs-intro-link docs-intro-link--${slug}`}>
-        <Link to={`/docs/${slug}/`}>{title}</Link>
+        <Link to={`/docs/${slug}/`}>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
+        </Link>
       </li>
     );
   }

@@ -2,18 +2,22 @@
   "docs": [
     {
       "title": "What is open source?",
+      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
       "slug": "what-is-open-source"
     },
     {
       "title": "Why would I contribute?",
+      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
       "slug": "why-contribute"
     },
     {
       "title": "What do I need to know?",
+      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
       "slug": "need-to-know"
     },
     {
       "title": "How do I get started?",
+      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
       "slug": "get-started"
     }
   ],
