@@ -8,6 +8,7 @@ export default class Intro extends Component {
   render() {
     return (
       <section className="intro">
+        <div className="copter" />
         <header>
           <h2>Contribute to Test Pilot</h2>
         </header>
