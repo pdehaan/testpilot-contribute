@@ -1,11 +1,11 @@
 import React from 'react';
 import { addDecorator } from '@kadira/storybook';
 
-import Wrapper from './index';
+import { Width, Wrapper } from './index';
 
-export default (extraClass = 'default') => {
+export const wrapper = (extraClass = 'default', innerStyles = {}) => {
   return story => (
-    <Wrapper extraClass={extraClass}>
+    <Wrapper extraClass={extraClass} innerStyles={innerStyles}>
       {story()}
     </Wrapper>
   );

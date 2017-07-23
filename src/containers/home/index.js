@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { filterActions } from '../../actions/filters';
 import DocsIntro from '../../components/docs-intro';
+import Header, { HomeNav } from '../../components/header';
 import ProjectIntro from '../../components/project-intro';
 import SkillIntro from '../../components/skill-intro';
 import Intro from '../../components/intro';
@@ -14,16 +15,21 @@ export class Home extends Component {
   render() {
     const { changeRepo, changeSkill, history, repos, skills } = this.props;
     return (
-      <section>
-        <Intro />
-        <DocsIntro />
-        <ProjectIntro changeRepo={changeRepo} history={history} repos={repos} />
-        <SkillIntro
-          changeSkill={changeSkill}
-          history={history}
-          skills={skills}
-        />
-      </section>
+      <div className="home">
+        <Header>
+          <HomeNav />
+        </Header>
+        <main>
+          <Intro />
+          <DocsIntro />
+          <ProjectIntro changeRepo={changeRepo} history={history} repos={repos} />
+          <SkillIntro
+            changeSkill={changeSkill}
+            history={history}
+            skills={skills}
+          />
+        </main>
+      </div>
     );
   }
 }

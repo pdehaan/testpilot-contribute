@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import DocsNavigation from '../../components/docs-navigation';
+import Header from '../../components/header';
 
 import './index.css';
 
@@ -53,19 +54,22 @@ export default class DocsPage extends Component {
   render() {
     const { match: { path } } = this.props;
     return (
-      <section className="docs-page">
-        <div>
-          <article>
-            <header className="docs-page--header">
-              <h2>{this.renderTitle()}</h2>
-            </header>
-            <main className="docs-page--content">
-              {this.renderContent()}
-            </main>
-          </article>
-          <DocsNavigation currentPath={path} />
-        </div>
-      </section>
+      <div>
+        <Header />
+        <section className="docs-page">
+          <div>
+            <article>
+              <header className="docs-page--header">
+                <h2>{this.renderTitle()}</h2>
+              </header>
+              <main className="docs-page--content">
+                {this.renderContent()}
+              </main>
+            </article>
+            <DocsNavigation currentPath={path} />
+          </div>
+        </section>
+      </div>
     );
   }
 }
