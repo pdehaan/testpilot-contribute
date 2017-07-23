@@ -1,14 +1,76 @@
 @import '../../util.scss';
 
 .task-filters {
-  @include full-width;
+  margin: 0 36px 0 0;
+  padding: 0;
+  width: 150px;
 
-  border-bottom: 1px solid #EEE;
-  display: flex;
+  section {
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
 
   h2 {
-    color: #666;
-    font-size: 14px;
-    font-weight: 500;
+    color: #23CCE0;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-top: 8px;
+  }
+
+  a {
+    color: #FFF;
+    display: inline-block;
+    min-height: 16px;
+    opacity: 0.5;
+    padding-left: 28px;
+    text-decoration: none;
+    transition: opacity 175ms ease-in;
+
+    &:hover {
+      opacity: 0.85
+    }
+
+    &.task-filters--current {
+      opacity: 1;
+    }
+  }
+}
+
+
+.task-filters--reset {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 2px;
+  color: #FFF;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 32px;
+  opacity: 0.66;
+  padding: 4px 0;
+  transition: all 175ms ease-in;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 1;
   }
 }

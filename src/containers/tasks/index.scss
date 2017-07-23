@@ -1,9 +1,9 @@
 @import '../../util.scss';
 
 .tasks {
-  @include full-width;
+}
 
-  background: #FFF;
-  padding-top: 48px;
-  padding-bottom: 32px;
+.tasks--view {
+  display: flex;
+  padding-top: 64px;
 }

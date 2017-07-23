@@ -17,9 +17,9 @@ class Tasks extends Component {
     return (
       <div>
         <Header />
-        <div className="tasks">
+        <main className="tasks">
           {elem}
-        </div>
+        </main>
       </div>
     );
   }
@@ -56,7 +56,7 @@ class Tasks extends Component {
   renderTasks() {
     const { tasks } = this.props;
     return this.renderWrapper(
-      <div>
+      <div className="tasks--view">
         {this.renderFilters()}
         <TaskList tasks={tasks} />
       </div>
@@ -66,7 +66,7 @@ class Tasks extends Component {
   render() {
     const { status, tasks } = this.props;
     if ([taskStatus.INIT, taskStatus.PENDING].includes(status)) {
-      return this.renderWrapper(<Loading extraClass="loading--light" />);
+      return this.renderWrapper(<Loading extraClass="loading--white" />);
     } else if (tasks.length === 0) {
       return this.renderEmpty();
     }

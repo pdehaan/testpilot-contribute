@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
+import Button from '../button';
+
 import './index.css';
 
 class TaskFilter extends Component {
@@ -13,31 +15,49 @@ class TaskFilter extends Component {
     title: PropTypes.string.isRequired
   };
 
-  handleChange(evt) {
-    const { target } = evt;
-    this.props.change(
-      target.options[target.selectedIndex].getAttribute('value')
-    );
+  handleClick(evt) {
+    evt.preventDefault();
+    this.props.change(evt.target.dataset.value);
   }
 
-  renderOption(value, title) {
+  renderOptionStyle(thumbnail) {
+    return {
+      background: `url('${thumbnail}') no-repeat left`,
+      backgroundSize: '16px 16px'
+    };
+  }
+
+  renderOption(value, title, thumbnail) {
     const selected = value === this.props.current;
-    return <option selected={selected} value={value}>{title}</option>;
+    return (
+      <li key={value}>
+        <a
+          className={selected ? 'task-filters--current' : ''}
+          href=""
+          data-value={value}
+          onClick={evt => this.handleClick(evt)}
+          style={this.renderOptionStyle(thumbnail)}
+        >{title}</a>
+      </li>
+    );
   }
 
   renderSelect() {
     const { available, title } = this.props;
     return (
-      <select onChange={evt => this.handleChange(evt)}>
-        {this.renderOption(null, title)}
-        {available &&
-          available.map(item =>
-            this.renderOption(
-              this.props.getValue(item),
-              this.props.getTitle(item)
-            )
-          )}
-      </select>
+      <section className="task-filters--select" key={title}>
+        <h2>{title}</h2>
+        <ul>
+          {available &&
+            available.map(item =>
+              this.renderOption(
+                this.props.getValue(item),
+                this.props.getTitle(item),
+                this.props.getThumbnail(item)
+              )
+            )}
+        </ul>
+      </section>
     );
   }
 
@@ -58,6 +78,19 @@ export default class TaskFilters extends Component {
     skill: PropTypes.string
   };
 
+  handleReset(evt) {
+    evt.preventDefault();
+    const { changeRepo, changeSkill } = this.props;
+    changeRepo(null);
+    changeSkill(null);
+  }
+
+  renderResetButton() {
+    return (
+      <button className="task-filters--reset" onClick={evt => this.handleReset(evt)}>All Tasks</button>
+    )
+  }
+
   render() {
     const {
       available: { repos, skills },
@@ -68,21 +101,23 @@ export default class TaskFilters extends Component {
     } = this.props;
     return (
       <menu className="task-filters">
-        <h2>Filter by</h2>
+        {this.renderResetButton()}
         <TaskFilter
           available={repos}
           change={changeRepo}
           current={repo}
           getTitle={repo => repo.name}
           getValue={repo => repo.repo}
+          getThumbnail={repo => `/thumbnail/${repo.thumbnail}`}
           title="Project"
         />
         <TaskFilter
           available={skills}
           change={changeSkill}
           current={skill}
-          getTitle={repo => repo.name}
+          getTitle={skill => skill.name}
           getValue={skill => skill.tag}
+          getThumbnail={skill => `/skills/${skill.thumbnail}`}
           title="Skill"
         />
       </menu>

@@ -15,10 +15,10 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FILTERS_CHANGE_REPO:
-      return Object.assign({}, state, { skill: null, repo: action.slug });
+      return Object.assign({}, state, { repo: action.slug });
 
     case actionTypes.FILTERS_CHANGE_SKILL:
-      return Object.assign({}, state, { skill: action.slug, repo: null });
+      return Object.assign({}, state, { skill: action.slug });
 
     case actionTypes.FILTERS_SET_AVAILABLE:
       const available = Object.assign(
