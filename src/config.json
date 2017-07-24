@@ -109,7 +109,7 @@
         "2, 189, 173",
         "3, 82, 149"
       ],
-      "thumbnail": "page-shot.png"
+      "thumbnail": "screenshots.png"
     },
     {
       "name": "Activity Stream",
@@ -150,6 +150,26 @@
         "207, 88, 88"
       ],
       "thumbnail": "notes.png"
+    },
+    {
+      "name": "Voice Fill",
+      "repo": "mozilla/speaktome",
+      "description": "Speech recognition comes to Firefox. Voice Fill lets you speak to your favorite search engines.",
+      "colors": [
+        "0, 200, 215",
+        "0, 168, 183"
+      ],
+      "thumbnail": "voice-fill.png"
+    },
+    {
+      "name": "Send",
+      "repo": "mozilla/send",
+      "description": "Send files through a safe, private, and encrypted link that automatically expires to ensure your stuff does not remain online forever.",
+      "colors": [
+        "50, 202, 221",
+        "49, 153, 255"
+      ],
+      "thumbnail": "send.png"
     }
   ]
 }
