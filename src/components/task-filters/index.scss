@@ -9,6 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-right: 0;
     width: 100%;
   }
 
@@ -17,6 +18,14 @@
 
     &:last-child {
       margin-bottom: 24px;
+    }
+
+    @include small {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 24px;
+      }
     }
   }
 
@@ -73,6 +82,7 @@
   width: 100%;
 
   @include small {
+    margin-bottom: 16px;
     width: 66%;
   }
 

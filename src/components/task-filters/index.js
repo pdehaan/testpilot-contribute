@@ -93,7 +93,7 @@ export default class TaskFilters extends Component {
         className="task-filters--reset"
         onClick={evt => this.handleReset(evt)}
       >
-        All Tasks
+        Reset Filters
       </button>
     );
   }
