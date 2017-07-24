@@ -144,10 +144,10 @@
     {
       "name": "Notes",
       "repo": "mozilla/notes",
-      "description": "Notepad built in to Firefox",
+      "description": "A simple notepad built into Firefox. Ever need to jot something down while you browse the web? This is the experiment for you.",
       "colors": [
-        "242, 88, 32",
-        "215, 64, 18"
+        "166, 101, 180",
+        "207, 88, 88"
       ],
       "thumbnail": "notes.png"
     }
