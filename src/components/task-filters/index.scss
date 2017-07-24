@@ -5,6 +5,13 @@
   padding: 0;
   width: 150px;
 
+  @include small {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   section {
     margin-bottom: 48px;
 
@@ -49,7 +56,6 @@
   }
 }
 
-
 .task-filters--reset {
   background: none;
   border: 1px solid rgba(255, 255, 255, 1);
@@ -66,11 +72,21 @@
   transition: all 175ms ease-in;
   width: 100%;
 
+  @include small {
+    width: 66%;
+  }
+
   &:focus {
     outline: none;
   }
 
   &:hover {
     opacity: 1;
+  }
+}
+
+.task-filters--select {
+  @include small {
+    width: 40%;
   }
 }

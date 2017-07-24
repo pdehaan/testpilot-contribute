@@ -3,7 +3,12 @@
 .tasks--view {
   align-items: flex-start;
   display: flex;
-  padding-top: 64px;
+  padding-top: 48px;
+
+  @include small {
+    flex-direction: column;
+    padding-top: 36px;
+  }
 }
 
 .tasks--empty {
