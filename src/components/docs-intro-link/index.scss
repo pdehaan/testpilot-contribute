@@ -1,7 +1,20 @@
+@import '../../util.scss';
+
 .docs-intro-link {
   align-items: stretch;
   display: flex;
-  flex: 1;
+
+  @include large {
+    width: 33%;
+  }
+
+  @include medium {
+    width: 50%;
+  }
+
+  @include small {
+    width: 100%;
+  }
 
   a {
     background: url('./img/testpilot.svg') no-repeat center 30px;

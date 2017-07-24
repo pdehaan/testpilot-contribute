@@ -1,3 +1,5 @@
+@import '../../util.scss';
+
 .header {
   align-items: center;
   display: flex;
@@ -10,6 +12,10 @@
 
   h1 {
     margin: 0;
+
+    @include small {
+      margin: 0 auto;
+    }
 
     a {
       background: url('./img/logo.png') no-repeat;
@@ -30,6 +36,10 @@
     margin: 0;
     padding: 0;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+
+    @include medium {
+      display: none;
+    }
 
     a {
       color: #A3B3D0;

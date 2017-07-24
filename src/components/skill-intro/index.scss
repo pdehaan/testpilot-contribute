@@ -6,7 +6,6 @@
   }
 
   ul {
-    align-items: stretch;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,14 +16,13 @@
 }
 
 .skill-intro--item {
+  align-items: stretch;
   display: flex;
-  margin: 0 0 25px 25px;
-  min-width: 200px;
-  text-align: center;
-  width: 30%;
+  margin: 0 18px 36px;
+  width: 300px;
 
-  &:nth-child(3n-2) {
-    margin-left: 0;
+  @include small {
+    margin: 0 0 24px;
   }
 
   a {

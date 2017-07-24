@@ -4,7 +4,7 @@
   @include full-width;
 
   background: #EEE;
-  padding: 16px 0;
+  padding: 16px;
 
   h2 {
     font-size: 40px;
@@ -15,7 +15,12 @@
 
   ul {
     display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
+
+    @include large {
+      flex-wrap: wrap;
+    }
   }
 }
