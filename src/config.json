@@ -92,16 +92,6 @@
       "thumbnail": "containers.png"
     },
     {
-      "name": "Pulse",
-      "repo": "mozilla/pulse",
-      "description": "Give us a performance review. Add Pulse, and help us understand which websites work well in Firefox and which sites don’t.",
-      "colors": [
-        "88, 202, 91",
-        "62, 173, 185"
-      ],
-      "thumbnail": "pulse.png"
-    },
-    {
       "name": "Screenshots",
       "repo": "mozilla-services/screenshots",
       "description": "Intuitive screenshots baked right into the browser. Capture, save and share screenshots as you browse the Web using Firefox.",
@@ -130,16 +120,6 @@
         "253, 102, 123"
       ],
       "thumbnail": "min-vid.png"
-    },
-    {
-      "name": "Tab Center",
-      "repo": "bwinton/TabCenter",
-      "description": "What would it be like to move tabs from the top of the browser to the side? We wanted to find out!",
-      "colors": [
-        "242, 88, 32",
-        "215, 64, 18"
-      ],
-      "thumbnail": "tab-center.png"
     },
     {
       "name": "Notes",
