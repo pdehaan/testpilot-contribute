@@ -14,6 +14,11 @@
 
   article {
     flex: 1;
+
+    a {
+      color: #0996f8;
+      text-decoration: none;
+    }
   }
 
   .docs-page--header {
@@ -47,5 +52,15 @@
     li {
       margin: 4px 0;
     }
+  }
+
+  .docs-page--notice {
+    border-top: 1px solid #DDD;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.29;
+    margin-top: 32px;
+    padding-top: 32px;
   }
 }
