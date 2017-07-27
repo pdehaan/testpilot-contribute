@@ -38,6 +38,6 @@ export default class WhatIsOpenSourceSoftware extends DocsPage {
         </ul>
         <p>The open source model and ethos aren&apos;t necessarily limited to software. You may see open&#45;source data in the government and scientific communities, for example.</p>
       </div>
-    )
+    );
   }
 }
