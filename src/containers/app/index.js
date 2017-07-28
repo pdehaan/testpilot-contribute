@@ -5,6 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 
 import Footer from '../../components/footer';
 import Header, { HomeNav } from '../../components/header';
+import ScrollToTop from '../../components/scroll-to-top';
 import { docs } from '../../config.json';
 import Home from '../home';
 import Tasks from '../tasks';
@@ -49,12 +50,14 @@ export default class App extends Component {
     const { history } = this.props;
     return (
       <ConnectedRouter history={history}>
-        <div className="app">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/tasks/" component={Tasks} />
-          {this.renderDocsRoutes()}
-          <Footer />
-        </div>
+        <ScrollToTop location={history.location}>
+          <div className="app">
+            <Route exact path="/" component={Home} />
+            <Route exact path="/tasks/" component={Tasks} />
+            {this.renderDocsRoutes()}
+            <Footer />
+          </div>
+        </ScrollToTop>
       </ConnectedRouter>
     );
   }
