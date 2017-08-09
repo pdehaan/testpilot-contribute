@@ -5,7 +5,7 @@
   "author": "Mozilla (https://mozilla.org/)",
   "homepage": "https://testpilot-contribute.herokuapp.com",
   "license": "MPL-2.0",
-  "private": "true",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chuckharmston/testpilot-contribute.git"
@@ -17,7 +17,6 @@
     "node": "7.8.x",
     "npm": "4.2.x"
   },
-  "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
     "github-api": "^3.0.0",
@@ -36,6 +35,9 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "babel-eslint": "7.2.3",
+    "eslint": "4.4.1",
+    "eslint-plugin-react": "7.1.0",
     "lint-staged": "^3.4.1",
     "node-sass": "^4.5.2",
     "npm-run-all": "^4.0.2",
@@ -53,12 +55,14 @@
     "build-storybook": "build-storybook -s public",
     "build-css": "node-sass src/ -o src/",
     "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "lint": "eslint .",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --write \"src/**/*.js\""
+    "prettier": "prettier --single-quote --write 'src/**/*.js'"
   },
   "lint-staged": {
     "*.js": [
       "prettier --single-quote --write",
+      "eslint",
       "git add"
     ]
   }
