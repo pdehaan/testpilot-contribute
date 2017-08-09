@@ -68,11 +68,13 @@ export default class GitHub {
     }, '');
   };
 
+  static makeQuery = () => {
+    return `label:"${tag}" state:open type:issue ${GitHub.repoList()}`;
+  }
+
   static createRequest = url => {
     if (url === null) {
-      const query = encodeURIComponent(
-        `label:"${tag}" state:open type:issue ${GitHub.repoList()}`
-      );
+      const query = encodeURIComponent(GitHub.makeQuery());
       url = `https://api.github.com/search/issues?q=${query}&per_page=100`;
     }
     const headers = [];
@@ -109,7 +111,6 @@ export default class GitHub {
       get(url, headers)
         .then(req => {
           const data = JSON.parse(req.response);
-          console.log('xxx', req, data);
           const nextLink = GitHub.getNextLink(req);
           const items = cumulative.concat(data.items.map(GitHub.reduceIssue));
           if (nextLink) {

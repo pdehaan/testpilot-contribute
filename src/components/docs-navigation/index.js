@@ -13,7 +13,6 @@ export class DocsNavigationItem extends Component {
   static propTypes = {
     active: PropTypes.bool,
     className: PropTypes.string,
-    currentPath: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired
   };

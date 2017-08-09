@@ -1,6 +1,5 @@
 import {
-  filterActionTypes as actionTypes,
-  filterStatus as status
+  filterActionTypes as actionTypes
 } from '../actions/filters';
 
 const initialState = {

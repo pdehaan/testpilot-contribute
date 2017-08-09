@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Loading from '../loading';
@@ -11,8 +10,7 @@ export class ProjectIntroItem extends Component {
     changeRepo: PropTypes.func.isRequired,
     changeSkill: PropTypes.func.isRequired,
     description: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired
   };
 
   thumbnailBg() {
@@ -42,7 +40,7 @@ export class ProjectIntroItem extends Component {
   }
 
   render() {
-    const { description, name, repo } = this.props;
+    const { description, name } = this.props;
     return (
       <li
         className="project-intro--item"
@@ -92,11 +90,12 @@ export default class ProjectIntro extends Component {
     }
     return this.renderWrapper(
       <ul>
-        {repos.map(repo => (
+        {repos.map((repo, index) => (
           <ProjectIntroItem
             changeRepo={changeRepo}
             changeSkill={changeSkill}
             history={history}
+            key={index}
             {...repo}
           />
         ))}

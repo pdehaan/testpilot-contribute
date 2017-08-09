@@ -4,7 +4,7 @@ import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 
 import Footer from '../../components/footer';
-import Header, { HomeNav } from '../../components/header';
+import { HomeNav } from '../../components/header';
 import ScrollToTop from '../../components/scroll-to-top';
 import { docs } from '../../config.json';
 import Home from '../home';
@@ -27,11 +27,11 @@ export default class App extends Component {
         path="/docs"
         render={() => (
           <div>
-            {docs.map(doc => {
+            {docs.map((doc, index) => {
               const Component = require(`../docs-page/content/${doc.slug}`)
                 .default;
               const path = `/docs/${doc.slug}/`;
-              return <Route exact path={path} component={Component} />;
+              return <Route exact path={path} component={Component} key={index} />;
             })}
           </div>
         )}

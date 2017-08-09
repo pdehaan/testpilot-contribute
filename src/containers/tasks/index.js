@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import GitHub from '../../github';
 import { filterActions } from '../../actions/filters';
 import { taskStatus } from '../../actions/tasks';
 import Header from '../../components/header';
 import Loading from '../../components/loading';
 import TaskFilters from '../../components/task-filters';
 import TaskList from '../../components/task-list';
-
 import filteredTasks from '../../selectors/filters';
 
 import './index.css';
@@ -30,8 +30,7 @@ class Tasks extends Component {
       changeSkill,
       filters,
       repos,
-      skills,
-      tasks
+      skills
     } = this.props;
     return (
       <TaskFilters
@@ -49,6 +48,24 @@ class Tasks extends Component {
     const { changeRepo, changeSkill } = this.props;
     changeRepo(null);
     changeSkill(null);
+  }
+
+  getManualUrl() {
+    const query = encodeURIComponent(GitHub.makeQuery());
+    return `https://github.com/search?q=${query}&type=Issues`;
+  }
+
+  renderError() {
+    return this.renderWrapper(
+      <div className="tasks--view">
+        {this.renderFilters()}
+        <p className="tasks--error">
+          There was an error fetching the list of tasks from GitHub; you were
+          most likely rate-limited. Try <a href={this.getManualUrl()}>looking
+          them up manually</a>?
+        </p>
+      </div>
+    );
   }
 
   renderEmpty() {
@@ -78,7 +95,9 @@ class Tasks extends Component {
     const { status, tasks } = this.props;
     if ([taskStatus.INIT, taskStatus.PENDING].includes(status)) {
       return this.renderWrapper(<Loading extraClass="loading--white" />);
-    } else if (tasks.length === 0) {
+    } else if (status === taskStatus.ERROR) {
+      return this.renderError();
+    } else if (!tasks || tasks.length === 0) {
       return this.renderEmpty();
     }
     return this.renderTasks();

@@ -37,16 +37,16 @@ export default class GetStarted extends DocsPage {
         <p>When you&apos;re ready to begin contributing, it&apos;s very easy to get started. Screenshots will use GitHub, but similar open-source hosting tools have analagous functionality.</p>
         <p>Since you likely do not have commit rights to the repository, you will need to operate in a fork.</p>
         <figure>
-          <a href={fork}><img src={fork} /></a>
+          <a href={fork}><img src={fork} alt="Forking a repository" /></a>
           <figcaption>Forking a repository is a one-click process.</figcaption>
         </figure>
         <figure>
-          <a href={usingFork}><img src={usingFork} /></a>
+          <a href={usingFork}><img src={usingFork} alt="Using your fork" /></a>
           <figcaption>Note that I&apos;m now operating on <code>chuckharmston/testpilot</code>, rather than <code>mozilla/testpilot</code>.</figcaption>
         </figure>
         <p>Then to get a local copy of the repository, you clone your fork.</p>
         <figure>
-          <a href={clone}><img src={clone} /></a>
+          <a href={clone}><img src={clone} alt="Cloning your fork" /></a>
           <figcaption>Instructions for several ways to clone your fork.</figcaption>
         </figure>
         <p>To make changes, I recommend using a branch:</p>
@@ -57,7 +57,7 @@ export default class GetStarted extends DocsPage {
         </ul>
         <p>As a bonus, when you push a branch to a fork:</p>
         <figure>
-          <a href={pr}><img src={pr} /></a>
+          <a href={pr}><img src={pr} alt="Creating a pull request" /></a>
           <figcaption>GitHub shows UI to compare your branch to the remote master and create a pull request.</figcaption>
         </figure>
         <p>When composing changes, take care to follow established conventions. You may dogmatically believe in tabs, but if you&apos;re working on a project that uses spaces, follow that convention. This applies to code comments as well: write docstrings and module strings as appropriate, explaining the &ldquo;why&rdquo; as well as the &ldquo;what&rdquo;. Ensure that you also write any appropriate tests and documentation, making sure that builds pass. It&apos;s acceptable to submit partial pull requests (appropriately marked as a <code>WIP</code>) if you have any specific questions best asked with the context of the code.</p>

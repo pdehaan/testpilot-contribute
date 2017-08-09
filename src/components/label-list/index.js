@@ -15,14 +15,14 @@ export default class LabelList extends Component {
     repo: {}
   };
 
-  renderSkill(label) {
-    const { id, name } = label;
-    return <Label key={id} className="skill" name={name} />;
+  renderRepo() {
+    const { name, repo } = this.props.repo;
+    return <Label key={repo} className="project" name={name} />;
   }
 
-  renderRepo() {
-    const { colors, name, repo } = this.props.repo;
-    return <Label key={repo} className="project" name={name} />;
+  renderSkill(label, key) {
+    const { id, name } = label;
+    return <Label key={`${id}_${key}`} className="skill" name={name} />;
   }
 
   render() {
@@ -30,7 +30,7 @@ export default class LabelList extends Component {
     return (
       <div className="label-list">
         {this.renderRepo()}
-        {labels.map(label => this.renderSkill(label))}
+        {labels.map((label, index) => this.renderSkill(label, index))}
       </div>
     );
   }

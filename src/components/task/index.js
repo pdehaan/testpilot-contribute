@@ -11,7 +11,7 @@ export default class Task extends Component {
     url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     labels: PropTypes.arrayOf(PropTypes.object),
-    assignee: PropTypes.object.isRequired,
+    assignee: PropTypes.object,
     repo: PropTypes.object
   };
 
@@ -22,16 +22,9 @@ export default class Task extends Component {
   };
 
   renderAssignee() {
-    const { assignee } = this.props;
-    if (assignee) {
-      return (
-        <div className="issue--assignee">
-          Assigned to <a href={assignee.html_url}>{assignee.login}</a>
-        </div>
-      );
-    }
+    const assignee = this.props.assignee ? this.props.assignee.login : 'nobody';
     return (
-      <div className="issue--assignee">Assigned to <strong>nobody</strong></div>
+      <div className="issue--assignee">Assigned to <strong>{assignee}</strong></div>
     );
   }
 

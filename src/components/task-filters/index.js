@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from '../button';
-
 import './index.css';
 
 class TaskFilter extends Component {
@@ -65,7 +63,7 @@ class TaskFilter extends Component {
   }
 
   render() {
-    return this.renderSelect();
+    return this.props.available.length ? this.renderSelect() : null;
   }
 }
 

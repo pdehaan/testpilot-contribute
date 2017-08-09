@@ -18,9 +18,12 @@ const completeTasks = payload => {
   };
 };
 
-const errorTasks = () => ({
-  type: TASKS_ERROR
-});
+const errorTasks = () => {
+  console.log('errorTasks');
+  return {
+    type: TASKS_ERROR
+  };
+}
 
 export const taskActions = { fetchTasks, completeTasks, errorTasks };
 export const taskActionTypes = { TASKS_FETCH, TASKS_COMPLETE, TASKS_ERROR };

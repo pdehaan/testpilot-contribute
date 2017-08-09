@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import Loading from '../loading';
 
@@ -78,11 +77,12 @@ export default class SkillIntro extends Component {
     }
     return this.renderWrapper(
       <ul>
-        {skills.map(skill => (
+        {skills.map((skill, index) => (
           <SkillIntroItem
             changeSkill={changeSkill}
             changeRepo={changeRepo}
             history={history}
+            key={index}
             {...skill}
           />
         ))}
