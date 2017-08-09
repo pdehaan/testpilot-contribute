@@ -3,15 +3,9 @@
 .tasks--view {
   align-items: flex-start;
   display: flex;
-  padding-top: 24px;
-
-  @include medium {
-    padding-top: 0;
-  }
 
   @include small {
     flex-direction: column;
-    padding-top: 16px;
   }
 }
 

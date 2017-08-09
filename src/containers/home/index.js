@@ -15,7 +15,7 @@ export class Home extends Component {
   render() {
     const { changeRepo, changeSkill, history, repos, skills } = this.props;
     return (
-      <div className="home">
+      <div className="home--view">
         <Header>
           <HomeNav />
         </Header>

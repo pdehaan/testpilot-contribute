@@ -1,9 +1,7 @@
 @import '../../util.scss';
 
 .docs-page {
-  @include full-width;
-
-  background: #FFF;
+  color: #FFF;
   padding: 48px 0;
 
   > div {
@@ -21,7 +19,8 @@
     flex: 1;
 
     a {
-      color: #0996f8;
+      color: rgba(255, 255, 255, 1);
+      font-weight: 500;
       text-decoration: none;
     }
   }
@@ -29,18 +28,22 @@
   .docs-page--header {
     h2 {
       font-size: 24px;
+      font-weight: 300;
       line-height: 1;
       margin: 0 0 24px;
     }
   }
 
   .docs-page--content {
+    font-weight: 300;
+    font-size: 15px;
     padding: 0;
 
     h3 {
-      font-size: 19px;
+      font-size: 17px;
+      font-weight: 500;
       line-height: 1.22;
-      margin: 24px 0 16px;
+      margin: 32px 0 16px;
     }
 
     h4 {
@@ -48,6 +51,7 @@
     }
 
     p {
+      color: rgba(255, 255, 255, 0.85);
       line-height: 1.5;
       margin: 16px 0;
     }
@@ -59,28 +63,35 @@
     }
 
     li {
-      margin: 4px 0;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+      margin: 8px 0;
     }
 
     figure {
       margin: 24px 0;
+      padding: 5px;
 
       figcaption {
+        color: rgba(255, 255, 255, 0.85);
         font-size: 14px;
         font-style: italic;
         line-height: 1.29;
+        margin-top: 8px;
         text-align: center;
       }
 
       img {
-        border: 3px solid #EEE;
+        border-radius: 3px;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2),
+                    0 0 0 5px rgba(255, 255, 255, 0.2);
         max-width: 100%;
       }
     }
 
     blockquote {
-      border-left: 3px solid #DDD;
-      margin: 0;
+      border-left: 3px solid rgba(255, 255, 255, 0.2);
+      margin: 24px 0;
       padding: 16px 16px 16px 32px;
 
       p {
@@ -89,6 +100,7 @@
       }
 
       .docs-page--quote-attribution {
+        color: rgba(255, 255, 255, 0.85);
         margin-top: 16px;
       }
 
@@ -129,8 +141,8 @@
   }
 
   .docs-page--notice {
-    border-top: 1px solid #DDD;
-    color: #666;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
     font-style: italic;
     line-height: 1.29;

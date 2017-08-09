@@ -1,9 +1,13 @@
 @import '../../util.scss';
 
 .task-filters {
-  margin: 0 36px 0 0;
+  margin: 0 32px 0 0;
   padding: 0;
-  width: 150px;
+  width: 224px;
+
+  @include medium {
+    width: 164px;
+  }
 
   @include small {
     display: flex;
@@ -31,9 +35,9 @@
 
   h2 {
     color: #23CCE0;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 16px;
   }
 
   ul {
@@ -43,15 +47,17 @@
   }
 
   li {
-    margin-top: 8px;
+    margin-top: 24px;
   }
 
   a {
     color: #FFF;
     display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
     min-height: 16px;
-    opacity: 0.5;
-    padding-left: 28px;
+    opacity: 0.6;
+    padding-left: 36px;
     text-decoration: none;
     transition: opacity 175ms ease-in;
 
@@ -63,27 +69,39 @@
       opacity: 1;
     }
   }
+
+  .task-filters--back {
+    @include back-button();
+    margin-bottom: 24px;
+    opacity: 1;
+    padding: 0;
+
+    @include small {
+      width: 40%;
+    }
+  }
 }
 
 .task-filters--reset {
   background: none;
   border: 1px solid rgba(255, 255, 255, 1);
-  border-radius: 2px;
+  border-radius: 3px;
   color: #FFF;
   cursor: pointer;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 300;
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   opacity: 0.66;
-  padding: 4px 0;
-  transition: all 175ms ease-in;
+  max-width: 150px;
+  padding: 8px 0;
+  transition: opacity 175ms ease-in;
   width: 100%;
 
   @include small {
-    margin-bottom: 16px;
-    width: 66%;
+    max-width: 40%;
+    width: 40%;
   }
 
   &:focus {

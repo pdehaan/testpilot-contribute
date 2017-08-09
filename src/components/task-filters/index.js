@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Button from '../button';
 
@@ -23,7 +24,7 @@ class TaskFilter extends Component {
   renderOptionStyle(thumbnail) {
     return {
       background: `url('${thumbnail}') no-repeat left`,
-      backgroundSize: '16px 16px'
+      backgroundSize: '24px 24px'
     };
   }
 
@@ -87,6 +88,12 @@ export default class TaskFilters extends Component {
     changeSkill(null);
   }
 
+  renderBackButton() {
+    return (
+      <Link to="/" className="task-filters--back">Back</Link>
+    );
+  }
+
   renderResetButton() {
     return (
       <button
@@ -108,6 +115,7 @@ export default class TaskFilters extends Component {
     } = this.props;
     return (
       <menu className="task-filters">
+        {this.renderBackButton()}
         {this.renderResetButton()}
         <TaskFilter
           available={repos}

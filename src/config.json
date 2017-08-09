@@ -1,24 +1,28 @@
 {
   "docs": [
     {
-      "title": "What is open source software?",
-      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
-      "slug": "what-is-open-source-software"
+      "title": "What is open-source software?",
+      "subtitle": "How open-source software is developed, its advantages, and the types of software that are open-source.",
+      "slug": "what-is-open-source-software",
+      "icon": "what-is-open-source-software.svg"
     },
     {
       "title": "Why would I contribute?",
-      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
-      "slug": "why-contribute"
+      "subtitle": "What you stand to gain by contributing to open-source software.",
+      "slug": "why-contribute",
+      "icon": "why-contribute.svg"
     },
     {
       "title": "What do I need to know?",
-      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
-      "slug": "need-to-know"
+      "subtitle": "Ways to help, how to communicate, licenses, and the anatomy of an open-source project.",
+      "slug": "need-to-know",
+      "icon": "need-to-know.svg"
     },
     {
       "title": "How do I get started?",
-      "subtitle": "Phasellus euismod dictum magna, eu vehicula dolor tincidunt vitae.",
-      "slug": "get-started"
+      "subtitle": "How to find a project, report issues, and contribute your own code.",
+      "slug": "get-started",
+      "icon": "get-started.svg"
     }
   ],
   "tag": "good first bug",

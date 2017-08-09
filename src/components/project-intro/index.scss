@@ -17,6 +17,7 @@
 
 .project-intro--item {
   align-items: stretch;
+  border-radius: 3px;
   display: flex;
   margin: 0 18px 36px;
   width: 300px;
@@ -38,18 +39,6 @@
     position: relative;
     text-decoration: none;
     transition: box-shadow 150ms ease-out;
-
-    &::after {
-      background: rgba(255, 255, 255, .05);
-      content: "";
-      height: 300px;
-      left: -150px;
-      position: absolute;
-      top: -150px;
-      transform: rotate(45deg);
-      width: 300px;
-      z-index: 2;
-    }
 
     &:hover {
       box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .2),

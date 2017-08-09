@@ -64,7 +64,7 @@ export default class DocsPage extends Component {
     return (
       <div>
         <Header />
-        <section className="docs-page">
+        <main className="docs-page">
           <div>
             <article>
               <header className="docs-page--header">
@@ -77,7 +77,7 @@ export default class DocsPage extends Component {
             </article>
             <DocsNavigation currentPath={path} />
           </div>
-        </section>
+        </main>
       </div>
     );
   }

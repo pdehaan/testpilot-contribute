@@ -3,8 +3,9 @@
 .docs-intro {
   @include full-width;
 
-  background: #EEE;
-  padding: 16px;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.3);
+  padding: 32px 16px;
 
   h2 {
     font-size: 40px;
@@ -15,12 +16,17 @@
 
   ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
 
-    @include large {
+    @include medium {
       flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    @include small {
+      justify-content: center;
     }
   }
 }

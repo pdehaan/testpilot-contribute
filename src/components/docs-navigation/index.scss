@@ -11,7 +11,11 @@
   }
 
   .button {
+    font-size: 14px;
+    font-weight: 300;
+    height: 36px;
     margin-top: 16px;
+    max-width: 180px;
   }
 
   @include medium {
@@ -21,32 +25,30 @@
 }
 
 .docs-navigation--item {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-
-  &:first-child {
-    border-top: 0;
-  }
-
   a {
-    color: #444;
+    color: #FFF;
     display: block;
     font-size: 15px;
     line-height: 1.2;
-    padding: 12px 12px 10px;
+    opacity: 0.6;
+    padding: 12px 0 10px;
     text-decoration: none;
     transition: all 150ms ease-out;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.08);
-      color: #000;
+      opacity: 0.85;
     }
+  }
+
+  &.docs-navigation--back a {
+    @include back-button();
   }
 
   &.active {
     a {
-      background-color: rgba(0, 0, 0, 0.04);
-      color: #000;
       cursor: default;
+      opacity: 1.0;
     }
   }
 }
