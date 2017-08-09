@@ -10,9 +10,6 @@ export default createSelector(
   taskSelector,
   filterSelectors,
   (tasks, filters) => {
-    if (typeof tasks === 'undefined') {
-      return [];
-    }
     return tasks.filter(task => {
       return (
         (filters.repo === null || task.repo.repo === filters.repo) &&

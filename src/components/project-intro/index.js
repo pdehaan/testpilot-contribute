@@ -45,7 +45,6 @@ export class ProjectIntroItem extends Component {
       <li
         className="project-intro--item"
         style={this.styles()}
-        onClick={() => this.handleclick()}
       >
         <a href="/tasks" onClick={evt => this.handleClick(evt)}>
           <header>
