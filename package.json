@@ -3,7 +3,7 @@
   "description": "A minisite aggregating open bugs suitable for first-time contributors across Test Pilot's various projects and repositories.",
   "version": "0.9.0",
   "author": "Mozilla (https://mozilla.org/)",
-  "homepage": "https://testpilot-contribute.herokuapp.com",
+  "homepage": "https://contribute.testpilot.firefox.com",
   "license": "MPL-2.0",
   "private": "true",
   "repository": {
